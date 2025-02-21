@@ -2,9 +2,14 @@ const jwt = require('jsonwebtoken');
 
 // JWT doğrulama middleware'i
 const authenticateToken = (req, res, next) => {
-  const token = req.header('Authorization')?.split(' ')[1]; // "Bearer <token>" formatında gelir
+  const authHeader = req.header('Authorization');
 
-  if (!token) return res.status(401).json({ message: 'Token gerekli' });
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Yetkisiz erişim, token gerekli' });
+  }
+
+  // "Bearer <token>" formatından token'ı ayır
+  const token = authHeader.split(' ')[1];
 
   try {
     // Token'ı doğrula
@@ -12,7 +17,7 @@ const authenticateToken = (req, res, next) => {
     req.user = decoded; // Kullanıcı bilgisini request'e ekle
     next(); // Middleware'i geç
   } catch (err) {
-    res.status(403).json({ message: 'Geçersiz token' });
+    return res.status(403).json({ message: 'Geçersiz veya süresi dolmuş token' });
   }
 };
 

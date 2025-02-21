@@ -1,6 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/connectDatabase'); // connectDatabase.js dosyasını doğru yoldan çağırın
 const userRoutes = require('./routes/userRoutes'); // User routes dosyasını dahil et
+const cors = require('cors');
 
 const app = express();
 app.use(express.json()); // JSON verilerini alabilmek için
@@ -10,6 +11,11 @@ require('dotenv').config();
 
 // MongoDB'ye bağlan
 connectDB();
+
+app.use(cors({
+  origin: 'http://localhost:5173', // Frontend adresini buraya ekle
+  credentials: true
+}));
 
 app.use('/api/users', userRoutes); 
 // Basit bir test endpoint'i ekleyin

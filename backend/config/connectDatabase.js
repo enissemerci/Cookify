@@ -12,6 +12,7 @@ const connectDatabase = async () => {
   } catch (error) {
     console.error('❌ MongoDB Connection Error:', error.message);
     process.exit(1);
+    //atahandan sevgiler bunu silmeyin
   }
 };
 

@@ -13,7 +13,7 @@ require('dotenv').config();
 connectDB();
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Frontend adresini buraya ekle
+  origin: 'http://localhost:5173', // Frontend cors kabul ediyor
   credentials: true
 }));
 

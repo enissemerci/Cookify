@@ -18,7 +18,7 @@ const Login = () => {
       const res = await API.post('/users/login', formData);
       localStorage.setItem('token', res.data.token);
       setMessage('Giriş başarılı');
-      navigate('/dashboard'); // Kullanıcıyı yönlendir
+      navigate('/'); // Kullanıcıyı yönlendir
     } catch (error) {
       setMessage(error.response?.data?.message || 'Giriş başarısız');
     }

@@ -1,76 +1,56 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import RecipeCard from "../components/RecipeCard";  // RecipeCard bileşenini import ediyoruz
+import './Feed.css';  // Ana sayfa için CSS dosyasını import ediyoruz
 
 const Feed = () => {
   const [recipes, setRecipes] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    console.log('Stored Token:', token); // Token'i konsola yazdır istiyorsan eğer sadece denedim token doğru mu diye
+    const token = localStorage.getItem("token");
+    console.log("Stored Token:", token);
+
     const fetchRecipes = async () => {
       try {
-        const token = localStorage.getItem('token'); // Token'ı buradan alıyoruz
         if (!token) {
           console.error("Token bulunamadı!");
           return;
         }
-        const res = await axios.get('http://localhost:5001/api/recipes/recipes', {
-          headers: {
-            Authorization: `Bearer ${token}` // Token'ı başlığa ekliyoruz
-          }
+        const res = await axios.get("http://localhost:5001/api/recipes", {
+          headers: { Authorization: `Bearer ${token}` },
         });
-        console.log('Tarifler:', res.data); // Veriyi konsolda kontrol edelim
-        setRecipes(res.data); // Veriyi state'e kaydedelim
+        console.log("Tarifler:", res.data);
+        setRecipes(res.data);
       } catch (error) {
-        console.error('Tarifler getirilirken bir hata oluştu', error.response || error);
+        console.error(
+          "Tarifler getirilirken bir hata oluştu",
+          error.response || error
+        );
       }
     };
+
     fetchRecipes();
   }, []);
 
   return (
-    <div className="max-w-2xl mx-auto mt-10">
+    <div className="feed-container">
+      {/* Tarif Ekle Butonu */}
       <button
         onClick={() => navigate("/add-recipe")}
-        className="w-full bg-orange-500 text-white py-2 rounded-lg mb-6 hover:bg-orange-600"
+        className="feed-btn"
       >
         + Gönderi Paylaş
       </button>
 
+      {/* Tarifler */}
       {recipes.length > 0 ? (
         recipes.map((recipe) => (
-          <div
-            key={recipe._id}
-            className="bg-white shadow-md rounded-lg p-4 mb-6"
-          >
-            <div className="flex items-center mb-3">
-              <img
-                src={recipe.author.profileImage || "/default-avatar.png"}
-                alt={recipe.author.username}
-                className="w-10 h-10 rounded-full"
-              />
-              <span className="ml-3 font-semibold">{recipe.author.username}</span>
-            </div>
-
-            <img
-              src={recipe.image || "/placeholder.png"}
-              alt={recipe.title}
-              className="w-full rounded-lg mb-3"
-            />
-
-            <h3 className="font-bold text-lg">{recipe.title}</h3>
-            <p className="text-gray-600">{recipe.description}</p>
-
-            <div className="flex justify-between mt-3 text-sm text-gray-500">
-              <span>{recipe.likes.length} Beğeni</span>
-              <span>{recipe.comments.length} Yorum</span>
-            </div>
-          </div>
+          <RecipeCard key={recipe._id} recipe={recipe} />
         ))
       ) : (
-        <p>Henüz tarif bulunmamaktadır.</p>
+        <p className="text-center text-gray-500">Henüz tarif bulunmamaktadır.</p>
       )}
     </div>
   );

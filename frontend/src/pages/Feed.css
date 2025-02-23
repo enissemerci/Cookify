@@ -1,0 +1,112 @@
+/* Feed component için genel stil */
+.feed-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .feed-btn {
+    width: 100%;
+    background-color: #f97316; /* Turuncu */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .feed-btn:hover {
+    background-color: #f97316d9; /* Hover turuncu rengi */
+  }
+  
+  /* Tarif Kartı */
+  .recipe-card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .recipe-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Kullanıcı Bilgileri */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    object-fit: cover;
+  }
+  
+  .user-info span {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+  }
+  
+  /* Yemek Fotoğrafı */
+  .recipe-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+  }
+  
+  /* Tarif Başlığı */
+  .recipe-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 8px;
+  }
+  
+  /* Tarif Açıklaması */
+  .recipe-description {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  /* Beğeni ve Yorumlar */
+  .likes-comments {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #718096;
+  }
+  
+  .likes-comments span {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  
+  .likes-comments span:hover {
+    cursor: pointer;
+  }
+  
+  .likes-comments .like-icon,
+  .likes-comments .comment-icon {
+    font-size: 16px;
+    color: #f97316;
+  }

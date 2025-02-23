@@ -7,7 +7,7 @@ const authenticateToken = require('../middleware/authMiddleware');
 router.post('/add', authenticateToken, createRecipe);
 
 // Tarifleri listele (Bunun için /all yerine /recipes kullanıyoruz)
-router.get('/recipes', getAllRecipes);
+router.get('/', getAllRecipes);
 
 // Belirli bir tarifi getir
 router.get('/:recipeId', getRecipeById);

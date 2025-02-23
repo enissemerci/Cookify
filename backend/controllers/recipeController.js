@@ -26,16 +26,11 @@ const createRecipe = async (req, res) => {
 const getAllRecipes = async (req, res) => {
   try {
     const recipes = await Recipe.find()
-      .sort({ createdAt: -1 })
-      .populate('author', 'username profileImage')
-      .populate('likes')
-      .populate({
-        path: 'comments',
-        populate: { path: 'author', select: 'username profileImage' }
-      });
+    .populate('author', 'username email profileImage')  // Sadece username, email ve profileImage'ı alıyoruz
+    .exec();
     res.status(200).json(recipes);
   } catch (err) {
-    res.status(400).json({ message: 'Tarifler listelenirken bir hata oluştu', error: err });
+    res.status(400).json({ message: 'Kullanıcılar listelenirken bir hata oluştu', error: err });
   }
 };
 

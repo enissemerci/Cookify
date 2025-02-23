@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import AddRecipeCard from '../components/AddRecipeCard'; // Yeni bileşeni import ediyoruz.
 
 const AddRecipe = () => {
   const [title, setTitle] = useState('');
@@ -34,27 +35,22 @@ const AddRecipe = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-4">Yeni Tarif Ekle</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input type="text" placeholder="Başlık" value={title} onChange={(e) => setTitle(e.target.value)} className="w-full p-2 border rounded" required />
-        <textarea placeholder="Açıklama" value={description} onChange={(e) => setDescription(e.target.value)} className="w-full p-2 border rounded" required />
-        <input type="text" placeholder="Malzemeler (virgülle ayırın)" onChange={(e) => setIngredients(e.target.value.split(','))} className="w-full p-2 border rounded" required />
-        <input type="text" placeholder="Yapılış Adımları (virgülle ayırın)" onChange={(e) => setSteps(e.target.value.split(','))} className="w-full p-2 border rounded" required />
-        <input type="text" placeholder="Resim URL" value={image} onChange={(e) => setImage(e.target.value)} className="w-full p-2 border rounded" />
-        
-        <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full p-2 border rounded">
-          <option value="Tatlı">Tatlı</option>
-          <option value="Ana Yemek">Ana Yemek</option>
-          <option value="Atıştırmalık">Atıştırmalık</option>
-          <option value="İçecek">İçecek</option>
-          <option value="Diğer">Diğer</option>
-        </select>
-
-        <button type="submit" className="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600">
-          Tarif Paylaş
-        </button>
-      </form>
+    <div className="bg-gray-100">
+      <AddRecipeCard
+        title={title}
+        description={description}
+        ingredients={ingredients}
+        steps={steps}
+        image={image}
+        category={category}
+        setTitle={setTitle}
+        setDescription={setDescription}
+        setIngredients={setIngredients}
+        setSteps={setSteps}
+        setImage={setImage}
+        setCategory={setCategory}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };

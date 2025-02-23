@@ -1,4 +1,4 @@
-/* RecipeCard component için stil */
+/* Genel Stil ve Box Özellikleri */
 .recipe-card {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -110,4 +110,93 @@
   .likes-comments .comment-icon {
     font-size: 16px;
     color: #f97316;
+  }
+  
+  /* Buton */
+  .recipe-card button {
+    background-color: #f97316; /* Turuncu */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .recipe-card button:hover {
+    background-color: #d25d12; /* Daha koyu turuncu */
+  }
+  
+  /* Modal İçi Stil */
+  .modal-image {
+    display: flex;
+    flex-direction: row; /* Fotoğraf ve içerik yatay olarak sıralanacak */
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 16px;
+  }
+  
+  .recipe-image-modal {
+    width: 150px; /* Fotoğraf boyutunu küçülttük */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 400px; /* İçeriği sınırladık */
+  }
+  
+  .recipe-title-modal {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d3748;
+  }
+  
+  .author-name {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+  }
+  
+  .recipe-description {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .recipe-instructions {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+  }
+  
+  /* Modal İçeriği Konumlandırma */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .modal-body {
+    margin-top: 16px;
+  }
+  
+  /* Grid Düzeni */
+  .Grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 16px;
   }

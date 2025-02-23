@@ -1,0 +1,90 @@
+/* Popup'ı sayfa ortasında konumlandırma */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Tam ortalamak için */
+    width: 90%; /* Genişlik ayarı (isteğe bağlı) */
+    max-width: 500px; /* Maksimum genişlik */
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  /* Popup açıldığında görünür olacak */
+  .popup.open {
+    display: flex;
+  }
+  
+  /* Popup içeriği */
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Kapatma butonu */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #f97316; /* Turuncu renk */
+  }
+  
+  /* Form Card için stil */
+  .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+  }
+  
+  /* Başlık stil */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-2xl {
+    font-size: 24px;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  /* Material-UI buton stilini özelleştirme */
+  .MuiButton-contained {
+    background-color: #f97316; /* Turuncu renk */
+    color: white;
+    font-weight: 600;
+  }
+  
+  .MuiButton-contained:hover {
+    background-color: #ea580c; /* Hover durumunda daha koyu turuncu */
+  }
+  
+  /* Form elemanları için aralık */
+  .MuiTextField-root {
+    margin-bottom: 16px;
+  }
+  
+  .MuiFormControl-root {
+    margin-bottom: 16px;
+  }
+  /* Kapsayıcı container'ı ortalamak için flexbox kullanıyoruz */
+.card-container {
+    display: flex;
+    justify-content: center; /* Yatayda ortalama */
+    align-items: center;     /* Dikeyde ortalama */
+    min-height: 100vh;       /* Sayfanın tamamını kapsayacak şekilde */
+  }

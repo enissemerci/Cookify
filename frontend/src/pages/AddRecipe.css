@@ -1,0 +1,52 @@
+/* Ana ekranın arka planını gri yaparak card'ı vurgulayalım */
+.bg-gray-100 {
+    background-color: #f7fafc;
+    display: flex; /* Flexbox kullanarak merkezleme */
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+    min-height: 100vh; /* Sayfa yüksekliğini al */
+    
+  }
+  
+  /* Card içeriği için stil */
+  .card {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+    max-width: 500px; /* Maksimum genişlik */
+  }
+  
+  /* Başlık stil */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-2xl {
+    font-size: 24px;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  /* Material-UI buton stilini özelleştirme */
+  .MuiButton-contained {
+    background-color: #f97316; /* Turuncu renk */
+    color: white;
+    font-weight: 600;
+  }
+  
+  .MuiButton-contained:hover {
+    background-color: #ea580c; /* Hover durumunda daha koyu turuncu */
+  }
+  
+  /* Form elemanları için aralık */
+  .MuiTextField-root {
+    margin-bottom: 16px;
+  }
+  
+  .MuiFormControl-root {
+    margin-bottom: 16px;
+  }

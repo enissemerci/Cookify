@@ -10,7 +10,7 @@ const Feed = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("Stored Token:", token);
+    //console.log("Stored Token:", token); token ı yazdırmayı bıraktım
 
     const fetchRecipes = async () => {
       try {

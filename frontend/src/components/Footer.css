@@ -1,0 +1,43 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-bottom: 50px; /* Footer'ın altında boşluk bırakmak için */
+}
+
+.footer {
+    background-color: #f97316; /* Turuncu renk */
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: auto; /* Footer'ı alt kısma yapıştırır */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}

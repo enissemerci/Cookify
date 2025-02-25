@@ -10,7 +10,6 @@ const Feed = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    //console.log("Stored Token:", token); token ı yazdırmayı bıraktım
 
     const fetchRecipes = async () => {
       try {
@@ -22,7 +21,11 @@ const Feed = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("Tarifler:", res.data);
-        setRecipes(res.data);
+
+        // Tarifleri en son eklenene göre sıralıyoruz (azalan tarih sırasına göre)
+        const sortedRecipes = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        
+        setRecipes(sortedRecipes);
       } catch (error) {
         console.error(
           "Tarifler getirilirken bir hata oluştu",

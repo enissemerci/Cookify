@@ -1,0 +1,44 @@
+/* Container ayarları */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 200px); /* Navbar ve Footer'ın yüksekliğini çıkar */
+    justify-content: center; /* İçeriği dikeyde ortala */
+    align-items: center; /* İçeriği yatayda ortala */
+  }
+  
+  /* Formun dış kutusu */
+  .login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Formun iç kutusu */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff3e0; /* Turuncu tonları */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 3;
+    width: 100%;
+  }
+  
+  /* Input alanlarının stil ayarları */
+  .input-field .MuiInputBase-root {
+    font-size: 14px;
+  }
+  
+  /* Giriş yap butonunun stil ayarları */
+  .submit-btn {
+    margin-top: 16px;
+    padding: 10px;
+    background-color: #ff7043; /* Turuncu renk tonu */
+  }
+  
+  .submit-btn:hover {
+    background-color: #ff5722; /* Hover için koyu turuncu */
+  }

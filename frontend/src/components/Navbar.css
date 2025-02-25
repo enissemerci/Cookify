@@ -1,0 +1,126 @@
+/* Navbar Genel Stil */
+.navbar {
+    background-color: #ff7f50; /* Turuncu ton */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Logo Stili */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s;
+  }
+  
+  .logo:hover {
+    opacity: 0.8;
+  }
+  
+  /* Menü Linkleri */
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .menu a:hover {
+    color: #ffe4b5; /* Açık turuncu */
+  }
+  
+  /* Sağ Taraf - Login & Logout */
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .profile-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .profile-link:hover {
+    color: #ffe4b5;
+  }
+  
+  .login-button,
+  .logout-button {
+    background-color: white;
+    color: #ff7f50;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .login-button:hover,
+  .logout-button:hover {
+    background-color: #ffe4b5;
+    color: #ff4500;
+    cursor: pointer;
+  }
+  
+  /* 📌 Mobil İçin Hamburger Menü */
+  .hamburger {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* 📌 Responsive */
+  @media (max-width: 768px) {
+    /* Hamburger Butonu Gözüksün */
+    .hamburger {
+      display: block;
+    }
+  
+    /* Menü Başta Gizli */
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background: #ff7f50;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* En üstte kalmasını sağlar */
+  }
+  
+    /* Menü Açıkken */
+    .menu.open {
+      display: flex;
+    }
+  
+    .menu a,
+    .menu button {
+      padding: 10px 0;
+      width: 100%;
+    }
+    /* Drawer menü yazılarını biraz büyük yapalım */
+.MuiListItemText-primary {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+  }
+  }

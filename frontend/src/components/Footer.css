@@ -1,35 +1,49 @@
-body, html {
+html, body {
     height: 100%;
     margin: 0;
-}
-
-.container {
-    min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.main-content {
-    flex: 1;
-    padding-bottom: 50px; /* Footer'ın altında boşluk bırakmak için */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sayfanın tam yüksekliğini kaplamasını sağlar */
 }
 
+.main-content {
+    flex: 1; /* İçeriğin genişlemesini sağlar, footer'ı aşağı iter */
+}
+
+/* Footer Tasarımı */
 .footer {
     background-color: #f97316; /* Turuncu renk */
     color: white;
-    padding: 20px 0;
+    padding: 20px 40px;
     width: 100%;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    margin-top: auto; /* Footer'ı alt kısma yapıştırır */
+    display: flex;
+    justify-content: space-between; /* Logo sola, linkler sağa */
+    align-items: center;
+    margin-top: auto; /* Footer'ı sayfanın en altına iter */
 }
 
+/* Sol taraftaki logo */
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Sağ taraftaki linkler */
 .footer-links {
     display: flex;
-    justify-content: center;
     gap: 15px;
+    padding-right: 100px;
 }
 
 .footer-link {

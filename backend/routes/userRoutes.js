@@ -12,4 +12,5 @@ router.get('/', userController.getAllUsers);
 router.put('/update/:userId', authenticateToken, userController.updateUser);
 router.get('/find/:email', authenticateToken, userController.findUserByEmail);
 
+router.get("/recipes", authenticateToken, userController.getUserRecipes);//aynı zamanda kullancı bilgierlini de alıyorum profilde
 module.exports = router;

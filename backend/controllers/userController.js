@@ -1,6 +1,8 @@
 const User = require('../models/User');  // User modelini dahil et
 const bcrypt = require('bcryptjs'); // bcryptjs'i dahil et
 const jwt = require('jsonwebtoken'); // jsonwebtoken'i dahil et
+const Recipe = require("../models/Recipe");
+
 // Kullanıcı oluşturma
 const createUser = async (req, res) => {
     try {
@@ -63,7 +65,8 @@ const loginUser = async (req, res) => {
   
       // Kullanıcıyı email ile bul
       const user = await User.findOne({ email });
-      if (!user) return res.status(400).json({ message: 'Kullanıcı bulunamadı' });
+      
+      if (!user) return res.status(400).json({ message: 'Kullanıcı bulunamadı', });
   
       // Şifreyi kontrol et
       const isMatch = await bcrypt.compare(password, user.password);
@@ -76,10 +79,34 @@ const loginUser = async (req, res) => {
         { expiresIn: '1h' } // Token'in geçerlilik süresi
       );
   
-      res.status(200).json({ message: 'Giriş başarılı', token });
+      res.status(200).json({ message: 'Giriş başarılı', token});
     } catch (err) {
       res.status(400).json({ message: 'Giriş yapılırken bir hata oluştu', error: err });
     }
   };
   
-module.exports = { createUser, updateUser, findUserByEmail,loginUser,getAllUsers };
+
+
+const getUserRecipes = async (req, res) => {
+  try {
+    const userId = req.user.id;  // Giriş yapan kullanıcının ID'si alınır
+    const recipes = await Recipe.find({ author: userId })  // Giriş yapan kullanıcıya ait tarifleri getir
+      .populate("author", "username email profileImage")
+      .exec();
+    
+    if (recipes.length === 0) {
+      return res.status(404).json({ message: "Hiç tarif bulunamadı" });
+    }
+
+    res.status(200).json(recipes);
+  } catch (err) {
+    res
+      .status(400)
+      .json({
+        message: "Tarifler listelenirken bir hata oluştu",
+        error: err,
+      });
+  }
+};
+
+module.exports = { createUser, updateUser, findUserByEmail,loginUser,getAllUsers,getUserRecipes};

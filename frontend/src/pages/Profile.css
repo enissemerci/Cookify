@@ -1,0 +1,78 @@
+/* Profile Sayfasındaki Tarif Listesi Düzeni */
+.profile-page .recipe-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 kart yan yana */
+    gap: 20px;  /* Kartlar arasındaki boşluk */
+    margin: 20px;
+    padding: 0;
+  }
+  
+  /* Profile Sayfasındaki Tarif Kartı */
+  .profile-page .recipe-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-page .recipe-card:hover {
+    transform: scale(1.05);  /* Hover efekti ile biraz büyüme */
+  }
+  .profile-page .recipe-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .profile-page .recipe-description {
+    font-size: 1rem;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  .profile-page .likes-comments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .profile-page .like-icon,
+  .profile-page .comment-icon {
+    font-size: 1.2rem;
+    color: #ff6600;
+  }
+  
+  .profile-page .recipe-card button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-page .recipe-card button:hover {
+    background-color: #cc5200;
+  }
+  
+  /* Responsive Tasarım */
+  @media (max-width: 768px) {
+    .profile-page .recipe-list {
+      grid-template-columns: repeat(2, 1fr);  /* 2 kart yan yana */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profile-page .recipe-list {
+      grid-template-columns: 1fr;  /* 1 kart tek başına */
+    }
+  }

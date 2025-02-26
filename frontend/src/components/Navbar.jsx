@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Button, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/foto.svg"; // SVG logosunu içe aktarıyoruz
+import axios from 'axios';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Navbar = () => {
   // Token kontrolü ve giriş durumu güncelleme
   useEffect(() => {
     setIsLoggedIn(!!token); // token varsa true, yoksa false
-  }, [token]); // sadece token değiştiğinde çalışacak
+  }, [token]);
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Token'ı sil
@@ -23,34 +24,31 @@ const Navbar = () => {
     navigate("/login"); // Login sayfasına yönlendir
   };
 
-  const handleLogin = () => {
-    localStorage.setItem("token", "your_token_value"); // Token'ı kaydet
-    setIsLoggedIn(true); // Giriş durumu güncelle
-  };
-
   const toggleDrawer = (open) => () => setDrawerOpen(open);
 
   return (
     <>
       <AppBar position="static" sx={{ backgroundColor: "#f97316", paddingX: 2 }}>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <Link to="/" style={{ display: "flex", alignItems: "center" }}>
             <img src={Logo} alt="Cookify Logo" style={{ height: 50, width: "auto" }} />
           </Link>
 
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2, alignItems: "center" }}>
             <Button component={Link} to="/recipes" sx={{ color: "white" }}>Tarifler</Button>
             <Button component={Link} to="/add-recipe" sx={{ color: "white" }}>Tarif Ekle</Button>
             <Button component={Link} to="/challenges" sx={{ color: "white" }}>Challenge</Button>
 
             {isLoggedIn ? (
               <>
-                <Button component={Link} to="/profile" sx={{ color: "white" }}>Profilim</Button>
-                <Button sx={{ color: "white" }} onClick={handleLogout}>Logout</Button>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                  <Button component={Link} to="/profile" sx={{ color: "white", fontWeight: 500 }}>Profilim</Button>
+                  <Button sx={{ color: "white", fontWeight: 500 }} onClick={handleLogout}>Çıkış Yap</Button>
+                </Box>
               </>
             ) : (
-                <Button sx={{ color: "white", backgroundColor: "#3D405B", "&:hover": { backgroundColor: "#1E1F38" } }} component={Link} to="/login">
-                Login
+              <Button sx={{ color: "white", backgroundColor: "#3D405B", "&:hover": { backgroundColor: "#1E1F38" }, fontWeight: 500 }} component={Link} to="/login">
+                Giriş Yap
               </Button>
             )}
           </Box>

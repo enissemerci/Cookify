@@ -8,6 +8,8 @@ import Feed from "./pages/Feed";
 import AddRecipe from "./pages/AddRecipe";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Profile from "./pages/Profile";
+import RecipeSearch from "./pages/RecipeSearch";
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/search" element={<RecipeSearch />} />
+
+
         </Routes>
         <Footer/>
       </Router>

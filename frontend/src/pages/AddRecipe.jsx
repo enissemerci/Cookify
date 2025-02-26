@@ -13,26 +13,38 @@ const AddRecipe = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('http://localhost:5001/api/recipes/add', {
-        title,
-        description,
-        ingredients,
-        steps,
-        image,
-        category,
-      }, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      });
+  e.preventDefault();
+  
+  const token = localStorage.getItem('token'); // Token'ı localStorage'dan alıyoruz
+  if (!token) {
+    console.log('Token bulunamadı!');
+    return;
+  }
 
-      if (res.status === 201) {
-        navigate('/'); // Başarılıysa ana sayfaya yönlendir
-      }
-    } catch (error) {
-      console.error('Tarif eklerken hata oluştu:', error);
-    }
+  const recipeData = {
+    title,
+    description,
+    ingredients,
+    steps,
+    image,
+    category,
   };
+
+  try {
+    const response = await axios.post(
+      'http://localhost:5001/api/recipes/add',
+      recipeData,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`, // Token'ı Authorization başlığına ekliyoruz
+        },
+      }
+    );
+    console.log(response.data);
+  } catch (error) {
+    console.error("Tarif eklerken hata oluştu:", error);
+  }
+};
 
   return (
     <div className="bg-gray-100">

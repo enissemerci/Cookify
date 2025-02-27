@@ -58,6 +58,7 @@ const getAllUsers = async (req, res) => {
 
 
 
+
   // Kullanıcı girişi (login)
 const loginUser = async (req, res) => {
     try {
@@ -87,26 +88,34 @@ const loginUser = async (req, res) => {
   
 
 
-const getUserRecipes = async (req, res) => {
+  const getUserRecipes = async (req, res) => {
+    try {
+      const userId = req.user.id;  
+      const recipes = await Recipe.find({ author: userId })  
+        .populate("author", "username email profileImage")
+        .exec();
+  
+      // Eğer tarif yoksa, 404 yerine 200 OK ve boş dizi döndür
+      res.status(200).json(recipes);
+    } catch (err) {
+      console.error("Tarifler listelenirken hata:", err);
+      res.status(500).json({ message: "Sunucu hatası", error: err });
+    }
+  };
+
+const getUserInfo = async (req, res) => {
   try {
-    const userId = req.user.id;  // Giriş yapan kullanıcının ID'si alınır
-    const recipes = await Recipe.find({ author: userId })  // Giriş yapan kullanıcıya ait tarifleri getir
-      .populate("author", "username email profileImage")
-      .exec();
-    
-    if (recipes.length === 0) {
-      return res.status(404).json({ message: "Hiç tarif bulunamadı" });
+    const user = await User.findById(req.user.id).select("username email profileImage bio");
+
+    if (!user) {
+      return res.status(404).json({ message: "Kullanıcı bulunamadı" });
     }
 
-    res.status(200).json(recipes);
+    res.status(200).json(user);
   } catch (err) {
-    res
-      .status(400)
-      .json({
-        message: "Tarifler listelenirken bir hata oluştu",
-        error: err,
-      });
+    console.error("Kullanıcı bilgileri alınırken hata:", err);
+    res.status(500).json({ message: "Sunucu hatası", error: err });
   }
 };
 
-module.exports = { createUser, updateUser, findUserByEmail,loginUser,getAllUsers,getUserRecipes};
+module.exports = { createUser, updateUser, findUserByEmail,loginUser,getAllUsers,getUserRecipes,getUserInfo};

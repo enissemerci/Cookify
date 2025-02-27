@@ -17,28 +17,26 @@ const Profile = () => {
   const [recipeToDelete, setRecipeToDelete] = useState(null);  // Silinecek tarif
 
   useEffect(() => {
-    const fetchUserInfoAndRecipes = async () => {
+    const fetchData = async () => {
       try {
-        const token = localStorage.getItem("token"); 
-        const recipesResponse = await axios.get("http://localhost:5001/api/users/recipes", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+        const token = localStorage.getItem("token");
+  
+        const userResponse = await axios.get("http://localhost:5001/api/users/me", {
+          headers: { Authorization: `Bearer ${token}` },
         });
-
-        if (recipesResponse.data.length > 0) {
-          const user = recipesResponse.data[0].author;
-          setUserInfo(user);  
-        }
-        
-        setRecipes(recipesResponse.data);  
+        setUserInfo(userResponse.data);  // Kullanıcı bilgilerini kaydet
+  
+        const recipesResponse = await axios.get("http://localhost:5001/api/users/recipes", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setRecipes(recipesResponse.data);  // Tarifleri kaydet
       } catch (err) {
-        setError("Profil verileri alınırken bir hata oluştu");
+        setError("Veriler alınırken hata oluştu.");
         console.error(err);
       }
     };
-
-    fetchUserInfoAndRecipes();
+  
+    fetchData();
   }, []);
 
   const handleEditProfile = (updatedUser) => {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import RecipeCard from "../components/RecipeCard";  // RecipeCard bileşenini import ediyoruz
-import './Feed.css';  // Ana sayfa için CSS dosyasını import ediyoruz
+import RecipeCard from "../components/RecipeCard";
+import { Button, Container, Typography, Box } from "@mui/material";
 
 const Feed = () => {
   const [recipes, setRecipes] = useState([]);
@@ -20,17 +20,15 @@ const Feed = () => {
         const res = await axios.get("http://localhost:5001/api/recipes", {
           headers: { Authorization: `Bearer ${token}` },
         });
+
         console.log("Tarifler:", res.data);
 
         // Tarifleri en son eklenene göre sıralıyoruz (azalan tarih sırasına göre)
         const sortedRecipes = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        
+
         setRecipes(sortedRecipes);
       } catch (error) {
-        console.error(
-          "Tarifler getirilirken bir hata oluştu",
-          error.response || error
-        );
+        console.error("Tarifler getirilirken bir hata oluştu", error.response || error);
       }
     };
 
@@ -38,24 +36,37 @@ const Feed = () => {
   }, []);
 
   return (
-    <div className="feed-container">
+    <Container maxWidth="md" sx={{ mt: 4 }}>
       {/* Tarif Ekle Butonu */}
-      <button
-        onClick={() => navigate("/add-recipe")}
-        className="feed-btn"
-      >
-        + Gönderi Paylaş
-      </button>
+      <Box display="flex" justifyContent="center" mb={3}>
+        <Button 
+          variant="contained" 
+          sx={{
+            backgroundColor: "#f97316",
+            "&:hover": { backgroundColor: "#c05614" },
+            fontWeight: "bold"
+          }} 
+          onClick={() => navigate("/add-recipe")}
+        >
+          + Gönderi Paylaş
+        </Button>
+      </Box>
 
       {/* Tarifler */}
       {recipes.length > 0 ? (
         recipes.map((recipe) => (
-          <RecipeCard key={recipe._id} recipe={recipe} />
+          <Box key={recipe._id} display="flex" justifyContent="center" mb={3}>
+            <Box sx={{ maxWidth: 600, width: "100%" }}>
+              <RecipeCard recipe={recipe} />
+            </Box>
+          </Box>
         ))
       ) : (
-        <p className="text-center text-gray-500">Henüz tarif bulunmamaktadır.</p>
+        <Typography align="center" color="textSecondary">
+          Henüz tarif bulunmamaktadır.
+        </Typography>
       )}
-    </div>
+    </Container>
   );
 };
 

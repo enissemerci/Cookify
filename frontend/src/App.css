@@ -1,3 +1,71 @@
+/* Genel Sayfa Stilleri */
 body {
-  margin: 0; /* Margin değerini sıfırlıyoruz */
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  background-color: #ffffff; /* Beyaz arka plan */
+  color: #4a4a4a; /* Granit gri yazı rengi */
+}
+
+/* Navbar */
+.MuiAppBar-root {
+  background-color: #D32F2F !important; /* Canlı kırmızı navbar */
+}
+
+/* Link Stilleri */
+a {
+  text-decoration: none;
+  color: #D32F2F; /* Linkler için kırmızı */
+  font-weight: 500;
+}
+
+a:hover {
+  color: #9B1B1B; /* Daha koyu kırmızı hover efekti */
+}
+
+/* Buton Stilleri */
+.MuiButton-root {
+  background-color: #D32F2F !important; /* Kırmızı buton */
+  color: white !important;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 16px;
+}
+
+.MuiButton-root:hover {
+  background-color: #9B1B1B !important; /* Koyu kırmızı hover efekti */
+}
+
+/* Kart Stilleri */
+.MuiCard-root {
+  background-color: #ffffff !important; /* Kartlar beyaz */
+  border: 1px solid #D32F2F; /* Kırmızı çerçeve */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.MuiCard-root:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Başlık Stilleri */
+h1, h2, h3, h4, h5, h6 {
+  color: #D32F2F; /* Başlıklar kırmızı */
+}
+
+/* Input Alanları */
+.MuiInputBase-root {
+  border-radius: 6px !important;
+  border: 1px solid #D32F2F !important;
+  padding: 8px;
+}
+
+.MuiInputBase-root:focus {
+  border-color: #9B1B1B !important; /* Odaklanınca koyu kırmızı */
+}
+
+/* Footer */
+.footer {
+  background-color: #D32F2F;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }

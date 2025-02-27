@@ -17,10 +17,8 @@ html, body {
 
 /* Footer Tasarımı */
 .footer {
-    background-color: #f97316; /* Turuncu renk */
     color: white;
     padding: 20px 40px;
-    width: 100%;
     display: flex;
     justify-content: space-between; /* Logo sola, linkler sağa */
     align-items: center;
@@ -43,13 +41,13 @@ html, body {
 .footer-links {
     display: flex;
     gap: 15px;
-    padding-right: 100px;
 }
 
 .footer-link {
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
     font-size: 14px;
+
 }
 
 .footer-link:hover {

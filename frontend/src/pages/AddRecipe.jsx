@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import AddRecipeCard from '../components/AddRecipeCard'; // Yeni bileşeni import ediyoruz.
+import AddRecipeCard from '../components/AddRecipeCard';
+import { Button, Typography, Box, Container } from '@mui/material';
 
 const AddRecipe = () => {
   const [title, setTitle] = useState('');
@@ -10,60 +11,85 @@ const AddRecipe = () => {
   const [steps, setSteps] = useState([]);
   const [image, setImage] = useState('');
   const [category, setCategory] = useState('Ana Yemek');
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  const token = localStorage.getItem('token'); // Token'ı localStorage'dan alıyoruz
-  if (!token) {
-    console.log('Token bulunamadı!');
-    return;
-  }
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setIsAuthenticated(false);
+    }
+  }, []);
 
-  const recipeData = {
-    title,
-    description,
-    ingredients,
-    steps,
-    image,
-    category,
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.log('Token bulunamadı!');
+      return;
+    }
+
+    const recipeData = {
+      title,
+      description,
+      ingredients,
+      steps,
+      image,
+      category,
+    };
+
+    try {
+      const response = await axios.post(
+        'http://localhost:5001/api/recipes/add',
+        recipeData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data);
+      navigate('/recipes'); // Tarif eklendikten sonra kullanıcıyı feed sayfasına yönlendir
+    } catch (error) {
+      console.error("Tarif eklerken hata oluştu:", error);
+    }
   };
 
-  try {
-    const response = await axios.post(
-      'http://localhost:5001/api/recipes/add',
-      recipeData,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`, // Token'ı Authorization başlığına ekliyoruz
-        },
-      }
-    );
-    console.log(response.data);
-  } catch (error) {
-    console.error("Tarif eklerken hata oluştu:", error);
-  }
-};
-
   return (
-    <div className="bg-gray-100">
-      <AddRecipeCard
-        title={title}
-        description={description}
-        ingredients={ingredients}
-        steps={steps}
-        image={image}
-        category={category}
-        setTitle={setTitle}
-        setDescription={setDescription}
-        setIngredients={setIngredients}
-        setSteps={setSteps}
-        setImage={setImage}
-        setCategory={setCategory}
-        handleSubmit={handleSubmit}
-      />
-    </div>
+    <Container maxWidth="md" sx={{ mt: 4 }}>
+      {!isAuthenticated ? (
+        // Kullanıcı giriş yapmamışsa giriş yapmasını isteyen uyarı gösteriyoruz
+        <Box textAlign="center" mt={4}>
+          <Typography variant="h6" color="error" gutterBottom>
+            Tarif eklemek için giriş yapmalısınız.
+          </Typography>
+          <Button 
+            variant="contained" 
+            color="primary"
+            onClick={() => navigate("/login")}
+          >
+            Giriş Yap
+          </Button>
+        </Box>
+      ) : (
+        <AddRecipeCard
+          title={title}
+          description={description}
+          ingredients={ingredients}
+          steps={steps}
+          image={image}
+          category={category}
+          setTitle={setTitle}
+          setDescription={setDescription}
+          setIngredients={setIngredients}
+          setSteps={setSteps}
+          setImage={setImage}
+          setCategory={setCategory}
+          handleSubmit={handleSubmit}
+        />
+      )}
+    </Container>
   );
 };
 

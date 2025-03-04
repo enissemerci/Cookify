@@ -1,0 +1,170 @@
+.search-card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative; /* Tarih için sağ üst köşe yerleşimi */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .search-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
+    transform: translateY(-5px); /* Hafif yukarı kaldır */
+  }
+  
+  /* Tarif Başlığı */
+  .recipe-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 8px;
+    text-align: center; /* Ortala */
+    transition: transform 0.3s ease, font-size 0.3s ease;
+  }
+  
+  /* Hover Efekti - Başlık */
+  .search-card:hover .recipe-title {
+    font-size: 22px; /* Yazıyı büyüt */
+    transform: scale(1.1); /* Hafif büyütme efekti */
+  }
+  
+  /* Diğer Stil Ayarları */
+  .creation-date {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 12px;
+    color: #718096;
+    font-style: italic;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+  }
+  
+  .recipe-description {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .likes-comments {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #718096;
+  }
+  
+  .likes-comments span {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  
+  .likes-comments span:hover {
+    cursor: pointer;
+  }
+  
+  .likes-comments .like-icon,
+  .likes-comments .comment-icon {
+    font-size: 16px;
+    color: #f97316;
+  }
+  
+  .search-card button {
+    background-color: #f97316; /* Turuncu */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-card button:hover {
+    background-color: #d25d12; /* Daha koyu turuncu */
+  }
+  
+  .modal-image {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 16px;
+  }
+  
+  .recipe-image-modal {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 400px;
+  }
+  
+  .recipe-title-modal {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d3748;
+  }
+  
+  .author-name {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+  }
+  
+  .recipe-description {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .recipe-instructions {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.5;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .modal-body {
+    margin-top: 16px;
+  }
+  
+  .Grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 16px;
+  }

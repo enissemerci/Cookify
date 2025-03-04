@@ -1,44 +1,92 @@
 /* Container ayarları */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 200px); /* Navbar ve Footer'ın yüksekliğini çıkar */
-    justify-content: center; /* İçeriği dikeyde ortala */
-    align-items: center; /* İçeriği yatayda ortala */
-  }
-  
-  /* Formun dış kutusu */
-  .login-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Formun iç kutusu */
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff3e0; /* Turuncu tonları */
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 3;
-    width: 100%;
-  }
-  
-  /* Input alanlarının stil ayarları */
-  .input-field .MuiInputBase-root {
-    font-size: 14px;
-  }
-  
-  /* Giriş yap butonunun stil ayarları */
-  .submit-btn {
-    margin-top: 16px;
-    padding: 10px;
-    background-color: #ff7043; /* Turuncu renk tonu */
-  }
-  
-  .submit-btn:hover {
-    background-color: #ff5722; /* Hover için koyu turuncu */
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sayfa boyutunu tamamen kaplasın */
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f9; /* Hafif gri tonlu pastel arka plan */
+}
+
+/* Formun dış kutusu */
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Formun iç kutusu */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff; /* Beyaz zemin */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  width: 100%;
+  max-width: 400px; /* Formun genişliğini sınırladık */
+}
+
+/* Başlık rengi ve font */
+h5 {
+  color: #333333; /* Daha koyu ve şık bir renk */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Input alanlarının stil ayarları */
+.input-field .MuiInputBase-root {
+  font-size: 16px;
+  border-radius: 8px; /* Yumuşak kenarlar */
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+/* Giriş yap butonunun stil ayarları */
+.submit-btn {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #ff7f50; /* Yumuşak mercan rengi */
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease; /* Yumuşak geçiş */
+}
+
+.submit-btn:hover {
+  background-color: #ff5722; /* Hoverda daha koyu ton */
+}
+
+/* Kayıt ol butonu */
+.register-btn {
+  margin-top: 20px;
+  padding: 12px;
+  border: 2px solid #ff7f50; /* Mercan rengi kenarlık */
+  background-color: transparent;
+  color: #ff7f50;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #ff7f50;
+  color: white;
+}
+
+/* Mesaj alanı */
+.message {
+  margin-top: 20px;
+  color: #e57373; /* Hafif kırmızı tonları */
+  font-size: 14px;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

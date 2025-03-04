@@ -1,0 +1,77 @@
+/* Genel Container */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9; /* Hafif gri pastel arka plan */
+  }
+  
+  /* Form Box */
+  .register-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Beyaz zemin */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    width: 100%;
+    max-width: 400px; /* Form genişliği sınırlama */
+  }
+  
+  /* Başlık Stil */
+  h5 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #333333; /* Koyu gri başlık */
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Input Alanları */
+  .input-field .MuiInputBase-root {
+    font-size: 16px;
+    border-radius: 8px; /* Yuvarlak köşe */
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  /* Kayıt Ol Butonu */
+  .submit-btn {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: #ff7043; /* Turuncu */
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease; /* Yumuşak geçiş */
+  }
+  
+  .submit-btn:hover {
+    background-color: #ff5722; /* Hoverda koyu turuncu */
+  }
+  
+  /* Giriş Yap Butonu */
+  .login-btn {
+    margin-top: 20px;
+    padding: 12px;
+    border: 2px solid #ff7043;
+    background-color: transparent;
+    color: #ff7043;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #ff7043;
+    color: white;
+  }
+  
+  /* Mesaj */
+  .message {
+    margin-top: 20px;
+    color: #e57373; /* Kırmızı tonları */
+    font-size: 14px;
+  }

@@ -27,6 +27,10 @@ const Login = () => {
     }
   };
 
+  const handleNavigateToRegister = () => {
+    navigate("/register"); // Kayıt sayfasına yönlendir
+  };
+
   return (
     <Box className="login-container">
       <Container component="main" maxWidth="xs" className="login-box">
@@ -81,6 +85,21 @@ const Login = () => {
               {message}
             </Typography>
           )}
+
+          {/* Kayıt Ol Butonu */}
+          <Button
+            onClick={handleNavigateToRegister}
+            fullWidth
+            variant="outlined"
+            sx={{
+              marginTop: 2,
+              color: "#f97316",
+              borderColor: "#f97316",
+              "&:hover": { borderColor: "#f97316", color: "#fff" },
+            }}
+          >
+            Hesabınız yok mu? Kayıt Ol
+          </Button>
         </Box>
       </Container>
     </Box>

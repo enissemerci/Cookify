@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, TextField, Typography, Box, Container } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // useNavigate'yi dahil et
 import API from '../api';
+import "./Register.css"
 
 const Register = () => {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
@@ -25,18 +26,8 @@ const Register = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          backgroundColor: '#fff3e0', // Turuncu tonları
-          borderRadius: '8px',
-          padding: '20px',
-          boxShadow: 3,
-        }}
-      >
+    <Box className="register-container">
+      <Container component="main" maxWidth="xs" className="register-box">
         <Typography variant="h5" component="h1" color="primary" sx={{ marginBottom: 2 }}>
           Cookify - Kayıt Ol
         </Typography>
@@ -91,15 +82,7 @@ const Register = () => {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
-            sx={{
-              marginTop: 2,
-              padding: '10px',
-              backgroundColor: '#ff7043', // Turuncu renk tonu
-              '&:hover': {
-                backgroundColor: '#ff5722', // Hover için koyu turuncu
-              },
-            }}
+            className="submit-btn"
           >
             Kayıt Ol
           </Button>
@@ -109,23 +92,16 @@ const Register = () => {
             {message}
           </Typography>
         )}
-        {/* Giriş yapmaya yönlendiren buton */}
         <Button
           onClick={() => navigate('/login')}
           fullWidth
           variant="text"
-          sx={{
-            marginTop: 2,
-            color: '#ff7043', // Turuncu renk
-            '&:hover': {
-              color: '#ff5722', // Hover için koyu turuncu
-            },
-          }}
+          className="login-btn"
         >
           Zaten hesabınız var mı? Giriş Yapın
         </Button>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 

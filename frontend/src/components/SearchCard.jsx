@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import foto from "../assets/foto.webp";
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button, Typography, Box } from "@mui/material";
 import { AccessTime, LocalDining, AddShoppingCart, CheckCircle } from "@mui/icons-material"; // İkonlar
-import "./RecipeCard.css";
+import "./SearchCard.css";
 
-const RecipeCard = ({ recipe }) => {
+const SearchCard = ({ recipe }) => {
   const [openModal, setOpenModal] = useState(false); // Modal açma/kapama durumu
   const creationDate = new Date(recipe.createdAt).toLocaleDateString(); // Tarihi formatlamak için
 
@@ -19,20 +19,7 @@ const RecipeCard = ({ recipe }) => {
   };
 
   return (
-    <div className="recipe-card">
-      {/* Kullanıcı Bilgileri */}
-      <div className="user-info">
-        <img
-          src={recipe.author.profileImage || foto}
-          alt={recipe.author.username}
-          className="profile-img"
-        />
-        <div className="user-details">
-          <span className="username">{recipe.author.username}</span>
-          <span className="email">{recipe.author.email}</span>
-        </div>
-      </div>
-
+    <div className="search-card">
       {/* Tarifin Oluşturulma Tarihi */}
       <div className="creation-date">{creationDate}</div>
 
@@ -115,4 +102,4 @@ const RecipeCard = ({ recipe }) => {
   );
 };
 
-export default RecipeCard;
+export default SearchCard;

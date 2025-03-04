@@ -1,33 +1,37 @@
 const express = require('express');
-const connectDB = require('./config/connectDatabase'); // connectDatabase.js dosyasını doğru yoldan çağırın
-const userRoutes = require('./routes/userRoutes'); // User routes dosyasını dahil et
+const connectDB = require('./config/connectDatabase'); 
+const userRoutes = require('./routes/userRoutes'); 
 const recipeRoutes = require('./routes/recipeRoutes');
+const uploadRoutes = require('./routes/upload'); // <-- Yeni eklenen satır
 
 const cors = require('cors');
 
 const app = express();
-app.use(express.json()); // JSON verilerini alabilmek için
+app.use(express.json()); 
 
-// .env dosyasını yüklemek için
 require('dotenv').config();
 
-// MongoDB'ye bağlan
 connectDB();
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Frontend cors kabul ediyor
+  origin: 'http://localhost:5173', 
   credentials: true
 }));
-//users
+
+// API Routes
 app.use('/api/users', userRoutes); 
-//recipes
+console.log("User routes yüklendi:", userRoutes.stack.map(r => r.route)); // << Bunu ekledik
 app.use('/api/recipes', recipeRoutes);
-// Basit bir test endpoint'i ekleyin
+app.use('/api/upload', uploadRoutes); // <-- Yeni eklenen satır
+
+// Basit bir test endpoint'i
 app.get('/', (req, res) => {
   res.send('MongoDB Bağlantısı Başarıyla Yapıldı!');
 });
-// Uygulamayı başlat
-const PORT = process.env.PORT || 5001; // 5001 gibi başka bir port kullanabilirsiniz
+
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server çalışıyor, port: ${PORT}`);
 });
+
+

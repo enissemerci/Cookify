@@ -118,4 +118,15 @@ const getUserInfo = async (req, res) => {
   }
 };
 
-module.exports = { createUser, updateUser, findUserByEmail,loginUser,getAllUsers,getUserRecipes,getUserInfo};
+const getFavoriteRecipes = async (req, res) => {
+  try {
+      const userId = req.user.id; // Kullanıcı kimliği
+
+      const recipes = await Recipe.find({ likes: userId }); // Kullanıcının beğendiği tarifleri getir
+      res.status(200).json(recipes);
+  } catch (error) {
+      res.status(500).json({ message: 'Favori tarifler alınamadı', error });
+  }
+};
+
+module.exports = { createUser, updateUser, findUserByEmail,loginUser,getAllUsers,getUserRecipes,getUserInfo,getFavoriteRecipes};

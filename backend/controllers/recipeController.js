@@ -91,10 +91,35 @@ const deleteRecipe = async (req, res) => {
   }
 };
 
+const toggleFavorite = async (req, res) => {
+  try {
+      const recipeId = req.params.recipeId;
+      const userId = req.user.id; // Middleware'den gelen kullanıcı ID'si
+
+      const recipe = await Recipe.findById(recipeId);
+      if (!recipe) {
+          return res.status(404).json({ message: 'Tarif bulunamadı' });
+      }
+
+      const index = recipe.likes.indexOf(userId);
+      if (index === -1) {
+          recipe.likes.push(userId); // Beğen
+      } else {
+          recipe.likes.splice(index, 1); // Beğeniyi kaldır
+      }
+
+      await recipe.save();
+      res.status(200).json({ message: 'Favori durumu güncellendi', recipe });
+  } catch (error) {
+      res.status(500).json({ message: 'İşlem başarısız', error });
+  }
+};
+
 module.exports = {
   createRecipe,
   getAllRecipes,
   searchRecipes,
   updateRecipe,
   deleteRecipe,
+  toggleFavorite,
 };

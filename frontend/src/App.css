@@ -1,30 +1,35 @@
 /* Genel Sayfa Stilleri */
 body {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif !important;
   background-color: #ffffff; /* Beyaz arka plan */
-  color: #4a4a4a; /* Granit gri yazı rengi */
+  color: #4a4a4a; /* Granit gri yazı rengi (şimdi siyah olacak) */
 }
 
 /* Navbar */
 .MuiAppBar-root {
-  background-color: #D32F2F !important; /* Canlı kırmızı navbar */
+  background-color: #EB5A3C !important; /* Yeni navbar rengi */
+}
+
+/* Navbar yazı rengi */
+.MuiTypography-root {
+  color: #EDF4C2 !important; /* Navbar yazı rengi */
 }
 
 /* Link Stilleri */
 a {
   text-decoration: none;
-  color: #D32F2F; /* Linkler için kırmızı */
+  color: #EB5A3C; /* Linkler için yeni kırmızı */
   font-weight: 500;
 }
 
 a:hover {
-  color: #9B1B1B; /* Daha koyu kırmızı hover efekti */
+  color: #FBF5DD !important; /* Hover efekti için daha açık kırmızı */
 }
 
 /* Buton Stilleri */
 .MuiButton-root {
-  background-color: #D32F2F !important; /* Kırmızı buton */
+  background-color: #EB5A3C !important; /* Butonlar için yeni kırmızı */
   color: white !important;
   font-weight: bold;
   border-radius: 8px;
@@ -32,13 +37,13 @@ a:hover {
 }
 
 .MuiButton-root:hover {
-  background-color: #9B1B1B !important; /* Koyu kırmızı hover efekti */
+  background-color: #DF9755 !important; /* Koyu kırmızı hover efekti */
 }
 
 /* Kart Stilleri */
 .MuiCard-root {
   background-color: #ffffff !important; /* Kartlar beyaz */
-  border: 1px solid #D32F2F; /* Kırmızı çerçeve */
+  border: 1px solid #EB5A3C; /* Yeni kırmızı çerçeve */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -48,24 +53,30 @@ a:hover {
 
 /* Başlık Stilleri */
 h1, h2, h3, h4, h5, h6 {
-  color: #D32F2F; /* Başlıklar kırmızı */
+  color: #4a4a4a; /* Başlıklar için granit gri siyah renk */
 }
 
 /* Input Alanları */
 .MuiInputBase-root {
   border-radius: 6px !important;
-  border: 1px solid #D32F2F !important;
+  border: 1px solid #EB5A3C !important;
   padding: 8px;
 }
 
 .MuiInputBase-root:focus {
-  border-color: #9B1B1B !important; /* Odaklanınca koyu kırmızı */
+  border-color: #DF9755 !important; /* Odaklanınca açık kırmızı */
 }
 
 /* Footer */
 .footer {
-  background-color: #D32F2F;
+  background-color: #EB5A3C;
   color: white;
   text-align: center;
   padding: 10px 0;
+}
+
+/* Genel Yazı Stili */
+p, .MuiTypography-root {
+  color: #4a4a4a !important; /* Yazılar için granit gri siyah renk */
+  font-family: "Noto Sans", sans-serif !important;
 }

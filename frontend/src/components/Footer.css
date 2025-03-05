@@ -17,12 +17,14 @@ html, body {
 
 /* Footer Tasarımı */
 .footer {
+    background-color: #333;
     color: white;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between; /* Logo sola, linkler sağa */
     align-items: center;
     margin-top: auto; /* Footer'ı sayfanın en altına iter */
+    flex-wrap: wrap; /* Küçük ekranlarda alt alta gelmesini sağlar */
 }
 
 /* Sol taraftaki logo */
@@ -43,13 +45,37 @@ html, body {
     gap: 15px;
 }
 
+/* Linklerin stilleri */
 .footer-link {
     color: white !important;
     text-decoration: none !important;
     font-size: 14px;
-
 }
 
 .footer-link:hover {
     text-decoration: underline;
+}
+
+/* RESPONSIVE TASARIM */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-logo {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

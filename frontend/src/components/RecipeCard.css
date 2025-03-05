@@ -205,6 +205,6 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 3px solid red; /* Kırmızı çerçeve eklendi */
+  border: 3px solid #EB5A3C !important; /* Kırmızı çerçeve eklendi */
   object-fit: cover;
 }

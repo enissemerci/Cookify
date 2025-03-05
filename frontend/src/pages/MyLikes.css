@@ -1,0 +1,23 @@
+.page-title {
+    text-align: center;
+    margin: 20px 0;
+    color: #ff5733;
+    font-weight: bold;
+  }
+  
+  .recipe-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .no-likes {
+    text-align: center;
+    margin-top: 30px;
+    color: #555;
+  }

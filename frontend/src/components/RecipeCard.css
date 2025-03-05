@@ -201,3 +201,10 @@
   gap: 1rem;
   margin-top: 16px;
 }
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid red; /* Kırmızı çerçeve eklendi */
+  object-fit: cover;
+}

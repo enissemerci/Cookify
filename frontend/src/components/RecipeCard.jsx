@@ -1,26 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import foto from "../assets/foto.webp";
-import { Dialog, DialogActions, DialogContent, DialogTitle, Button, Typography, Box } from "@mui/material";
-import { AccessTime, LocalDining, AddShoppingCart, CheckCircle } from "@mui/icons-material"; // İkonlar
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Typography,
+  Box,
+} from "@mui/material";
+import {
+  Favorite,
+  FavoriteBorder,
+  AccessTime,
+  LocalDining,
+  AddShoppingCart,
+  CheckCircle,
+} from "@mui/icons-material";
 import "./RecipeCard.css";
 
 const RecipeCard = ({ recipe }) => {
-  const [openModal, setOpenModal] = useState(false); // Modal açma/kapama durumu
-  const creationDate = new Date(recipe.createdAt).toLocaleDateString(); // Tarihi formatlamak için
+  const [openModal, setOpenModal] = useState(false);
+  const [likes, setLikes] = useState(recipe.likes.length); // Beğeni sayısını al
+  const [isLiked, setIsLiked] = useState(false); // Kullanıcı beğenmiş mi?
+  const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token"); // Kullanıcı token'ı al
 
-  // Modal açma fonksiyonu
-  const handleOpenModal = () => {
-    setOpenModal(true);
-  };
+  // İlk render'da kullanıcının beğenip beğenmediğini kontrol et
+  useEffect(() => {
+    const checkIfLiked = () => {
+      const liked = recipe.likes.some((likeId) => likeId === userId);
+      setIsLiked(liked);
+    };
 
-  // Modal kapama fonksiyonu
-  const handleCloseModal = () => {
-    setOpenModal(false);
+    if (userId && recipe.likes) {
+      checkIfLiked();
+    }
+  }, [recipe.likes, userId]); // Likes ve userId'ye odaklanıyoruz
+
+  const handleFavorite = async () => {
+    if (!token) {
+      alert("Beğenmek için giriş yapmalısınız!");
+      return;
+    }
+
+    try {
+      const res = await axios.post(
+        `http://localhost:5001/api/recipes/${recipe._id}/favorite`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setIsLiked(res.data.isLiked); // Favori durumu güncelle
+      setLikes(res.data.likesCount); // Beğeni sayısını güncelle
+    } catch (error) {
+      console.error("Beğenme işlemi başarısız:", error.response || error);
+    }
   };
 
   return (
     <div className="recipe-card">
-      {/* Kullanıcı Bilgileri */}
       <div className="user-info">
         <img
           src={recipe.author.profileImage || foto}
@@ -32,57 +71,67 @@ const RecipeCard = ({ recipe }) => {
           <span className="email">{recipe.author.email}</span>
         </div>
       </div>
+      <div className="creation-date">
+        {new Date(recipe.createdAt).toLocaleDateString()}
+      </div>
 
-      {/* Tarifin Oluşturulma Tarihi */}
-      <div className="creation-date">{creationDate}</div>
-
-      {/* Yemek Fotoğrafı */}
       <img
         src={recipe.image || foto}
         alt={recipe.title}
         className="recipe-image"
       />
 
-      {/* Tarif Bilgileri */}
       <h3 className="recipe-title">{recipe.title}</h3>
       <p className="recipe-description">{recipe.description}</p>
 
       {/* Beğeni ve Yorumlar */}
       <div className="likes-comments">
-        <span className="like-icon">👍</span>
-        <span>{recipe.likes.length} Beğeni</span>
-        <span className="comment-icon">💬</span>
-        <span>{recipe.comments.length} Yorum</span>
+        <Button
+          onClick={handleFavorite}
+          sx={{ color: isLiked ? "red" : "gray" }}
+        >
+          {isLiked ? (
+            <Favorite />
+          ) : (
+            <FavoriteBorder />
+          )}
+          {likes} Beğeni
+        </Button>
       </div>
 
-      {/* Tarif Detaylarını Göster Butonu */}
       <Button
         variant="outlined"
         color="primary"
-        onClick={handleOpenModal}
+        onClick={() => setOpenModal(true)}
         sx={{ mt: 2 }}
       >
         Tarif Detayları
       </Button>
 
-      {/* Modal - Tarif Detayları */}
+      {/* Tarif Detayları Modal */}
       <Dialog
         open={openModal}
-        onClose={handleCloseModal}
+        onClose={() => setOpenModal(false)}
         maxWidth="md"
         fullWidth
       >
         <DialogTitle>Tarif Detayları</DialogTitle>
         <DialogContent>
           <Box display="flex" gap={3}>
-            {/* Malzemeler ve Yapılış Adımları */}
             <Box flex={1}>
               <Typography variant="h6" gutterBottom>
                 <AddShoppingCart sx={{ mr: 1 }} /> Malzemeler:
               </Typography>
               <div>
                 {recipe.ingredients.map((ingredient, index) => (
-                  <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
+                  <div
+                    key={index}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginBottom: "8px",
+                    }}
+                  >
                     <LocalDining sx={{ mr: 1 }} />
                     <span>{ingredient}</span>
                   </div>
@@ -96,7 +145,14 @@ const RecipeCard = ({ recipe }) => {
               </Typography>
               <div>
                 {recipe.steps.map((step, index) => (
-                  <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
+                  <div
+                    key={index}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginBottom: "8px",
+                    }}
+                  >
                     <CheckCircle sx={{ mr: 1 }} />
                     <span>{step}</span>
                   </div>
@@ -106,7 +162,7 @@ const RecipeCard = ({ recipe }) => {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseModal} color="primary">
+          <Button onClick={() => setOpenModal(false)} color="primary">
             Kapat
           </Button>
         </DialogActions>

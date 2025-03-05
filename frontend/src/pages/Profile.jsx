@@ -111,6 +111,7 @@ const Profile = () => {
           alt={userInfo.username}
           src={userInfo.profileImage || "defaultProfilePic.jpg"} 
           sx={{ width: 100, height: 100, marginRight: 3 }}
+          className="profile-avatar"
         />
         <div>
           <Typography variant="h6">{userInfo.username}</Typography>

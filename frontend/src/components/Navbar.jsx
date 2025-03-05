@@ -37,7 +37,7 @@ const Navbar = () => {
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2, alignItems: "center" }}>
             <Button component={Link} to="/recipes" sx={{ color: "white" }}>Tarifler</Button>
             <Button component={Link} to="/add-recipe" sx={{ color: "white" }}>Tarif Ekle</Button>
-            <Button component={Link} to="/challenges" sx={{ color: "white" }}>Challenge</Button>
+            <Button component={Link} to="/my-likes" sx={{ color: "white" }}>Beğendiklerim</Button>
 
             {isLoggedIn ? (
               <>
@@ -67,8 +67,8 @@ const Navbar = () => {
           <ListItem button component={Link} to="/add-recipe" onClick={toggleDrawer(false)}>
             <ListItemText primary="Tarif Ekle" />
           </ListItem>
-          <ListItem button component={Link} to="/challenges" onClick={toggleDrawer(false)}>
-            <ListItemText primary="Challenge" />
+          <ListItem button component={Link} to="/my-likes" onClick={toggleDrawer(false)}>
+            <ListItemText primary="Beğendiklerim" />
           </ListItem>
 
           {isLoggedIn ? (

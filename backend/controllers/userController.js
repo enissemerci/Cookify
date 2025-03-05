@@ -60,14 +60,14 @@ const getAllUsers = async (req, res) => {
 
 
   // Kullanıcı girişi (login)
-const loginUser = async (req, res) => {
+  const loginUser = async (req, res) => {
     try {
       const { email, password } = req.body;
   
       // Kullanıcıyı email ile bul
       const user = await User.findOne({ email });
-      
-      if (!user) return res.status(400).json({ message: 'Kullanıcı bulunamadı', });
+  
+      if (!user) return res.status(400).json({ message: 'Kullanıcı bulunamadı' });
   
       // Şifreyi kontrol et
       const isMatch = await bcrypt.compare(password, user.password);
@@ -80,12 +80,16 @@ const loginUser = async (req, res) => {
         { expiresIn: '1h' } // Token'in geçerlilik süresi
       );
   
-      res.status(200).json({ message: 'Giriş başarılı', token});
+      res.status(200).json({
+        message: 'Giriş başarılı',
+        token,           // Token
+        userId: user._id, // Kullanıcı ID'si
+        username: user.username, // Kullanıcı adı
+      });
     } catch (err) {
       res.status(400).json({ message: 'Giriş yapılırken bir hata oluştu', error: err });
     }
   };
-  
 
 
   const getUserRecipes = async (req, res) => {

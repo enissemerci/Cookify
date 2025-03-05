@@ -94,23 +94,35 @@ const deleteRecipe = async (req, res) => {
 const toggleFavorite = async (req, res) => {
   try {
       const recipeId = req.params.recipeId;
-      const userId = req.user.id; // Middleware'den gelen kullanıcı ID'si
+      const userId = req.user.id;
 
       const recipe = await Recipe.findById(recipeId);
       if (!recipe) {
           return res.status(404).json({ message: 'Tarif bulunamadı' });
       }
 
-      const index = recipe.likes.indexOf(userId);
-      if (index === -1) {
-          recipe.likes.push(userId); // Beğen
+      const isLiked = recipe.likes.includes(userId);
+
+      if (isLiked) {
+          // Beğeniyi kaldır
+          recipe.likes = recipe.likes.filter(id => id.toString() !== userId.toString()); 
       } else {
-          recipe.likes.splice(index, 1); // Beğeniyi kaldır
+          // Beğeni ekle
+          recipe.likes.push(userId); 
       }
 
+      // Veritabanını kaydediyoruz
       await recipe.save();
-      res.status(200).json({ message: 'Favori durumu güncellendi', recipe });
+
+      // Güncellenmiş veriyi frontend'e gönder
+      res.status(200).json({ 
+          message: 'Favori durumu güncellendi', 
+          isLiked: !isLiked, // Yeni beğeni durumunu frontend'e gönder
+          likesCount: recipe.likes.length // Güncellenmiş beğeni sayısını gönder
+      });
+
   } catch (error) {
+      console.error("Error:", error);
       res.status(500).json({ message: 'İşlem başarısız', error });
   }
 };

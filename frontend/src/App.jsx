@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import RecipeSearch from "./pages/RecipeSearch";
+import MyLikes from "./pages/MyLikes";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<RecipeSearch />} />
+          <Route path="/my-likes" element={<MyLikes />} />
 
 
         </Routes>

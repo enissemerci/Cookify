@@ -17,9 +17,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await API.post("/users/login", formData);
-      console.log(res.data);  // API yanıtını kontrol edin
+  
+      // Token ve kullanıcı bilgilerini localStorage'e kaydediyoruz
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("userId", res.data.userId); // Kullanıcı ID'si kaydediliyor
       localStorage.setItem("username", res.data.username); // Kullanıcı adı kaydediliyor
+  
       setMessage("Giriş başarılı");
       navigate("/recipes"); // Kullanıcıyı yönlendir
     } catch (error) {

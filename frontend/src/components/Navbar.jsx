@@ -30,8 +30,8 @@ const Navbar = () => {
     <>
       <AppBar position="static" sx={{ backgroundColor: "#f97316", paddingX: 2 }}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-            <img src={Logo} alt="Cookify Logo" style={{ height: 50, width: "auto" }} />
+          <Link to="/" style={{ display: "flex", alignItems: "center",paddingBottom:"10px" }}>
+            <img src={Logo} alt="Cookify Logo" style={{ height: 75, width: "auto" }} />
           </Link>
 
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2, alignItems: "center" }}>

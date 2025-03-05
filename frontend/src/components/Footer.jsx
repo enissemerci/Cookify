@@ -9,7 +9,6 @@ const Footer = () => {
       {/* Sol tarafta logo */}
       <Box className="footer-left">
         <img src={Logo} alt="Cookify Logo" className="footer-logo" />
-        <Typography variant="h6">Cookify</Typography>
       </Box>
 
       {/* Sağ tarafta linkler */}

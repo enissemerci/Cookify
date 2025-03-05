@@ -11,13 +11,15 @@ import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import RecipeSearch from "./pages/RecipeSearch";
 import MyLikes from "./pages/MyLikes";
+import { MainPage } from "./pages/MainPage";
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar/>
+        <Navbar />
         <Routes>
+          <Route path="/" element={<MainPage />} />
           <Route path="/recipes" element={<Feed />} />
           <Route path="/add-recipe" element={<AddRecipe />} />
           <Route path="/register" element={<Register />} />
@@ -26,10 +28,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<RecipeSearch />} />
           <Route path="/my-likes" element={<MyLikes />} />
-
-
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </>
   );

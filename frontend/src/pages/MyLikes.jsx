@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import "./MyLikes.css";
+import fallbackImage from "../assets/foto.webp"; // Burada foto.webp'i import ettik
 
 const MyLikes = () => {
   const [likedRecipes, setLikedRecipes] = useState([]);
@@ -83,7 +84,7 @@ const MyLikes = () => {
                     <CardMedia
                       component="img"
                       height="200"
-                      image={recipe.image}
+                      image={recipe.image || fallbackImage} // Resim yoksa fallbackImage kullanılacak
                       alt={recipe.title}
                     />
                     <CardContent>

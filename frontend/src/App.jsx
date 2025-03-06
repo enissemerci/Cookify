@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// react-slick stil dosyasını dahil edin
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import "./App.css";

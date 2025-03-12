@@ -1,0 +1,82 @@
+.dish-detail-container {
+    margin-top: 20px;
+    padding-bottom: 40px;
+    width: 80%;
+  }
+  
+  .dish-header {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+  
+  .dish-title-page {
+    font-size: 36px; /* Başlık boyutunu büyüttük */
+    font-weight: bold;
+    color: #2c3e50 !important;
+  }
+  
+  .dish-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+    border-bottom: 0;
+  }
+  
+  .dish-description {
+    margin-top: 10px;
+    font-size: 18px; /* Açıklama boyutunu arttırdık */
+    color: #555;
+  }
+  
+  /* Kartlar için temel stil */
+  .info-card {
+    padding: 25px; /* Kartların iç paddingini arttırdık */
+    margin-top: 15px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 18px; /* Kartlardaki yazı boyutunu arttırdık */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .info-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Farklı renkler */
+  .info-card-blue {
+    background: #fdf9f5 !important;
+  }
+  
+  .info-card-blue {
+    background: #e0f7fa !important;
+  }
+  
+  .info-card-color {
+    background: #fdf9f5 !important;
+  }
+  
+  .info-card ul {
+    padding-left: 20px;
+  }
+  
+  .info-card ul li {
+    margin-bottom: 10px; /* Liste elemanları arasındaki boşluğu artırdık */
+    font-size: 18px; /* Liste elemanları boyutunu arttırdık */
+  }
+  
+  /* Turuncu renk başlıkları için stil */
+  .info-card h6 {
+    color: #EB5A3C !important; /* Turuncu renk */
+    font-size: 28px; /* Başlık boyutunu büyüttük */
+  }
+  .info-card ul li::marker {
+    color: #EB5A3C !important; /* Turuncu renk */
+  }
+  .info-card svg {
+    color: #EB5A3C !important; /* Turuncu renk */
+  }

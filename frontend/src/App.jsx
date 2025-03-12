@@ -15,6 +15,7 @@ import Profile from "./pages/Profile";
 import RecipeSearch from "./pages/RecipeSearch";
 import MyLikes from "./pages/MyLikes";
 import { MainPage } from "./pages/MainPage";
+import DishDetailPage from "./pages/DishDetailPage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<RecipeSearch />} />
           <Route path="/my-likes" element={<MyLikes />} />
+          <Route path="/dish/:id" element={<DishDetailPage />} />
         </Routes>
         <Footer />
       </Router>

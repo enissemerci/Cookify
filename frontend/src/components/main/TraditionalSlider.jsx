@@ -1,12 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { Paper, Typography } from "@mui/material";
 import Slider from "react-slick";
 import "./TraditionalSlider.css";
+import DishCard from "./DishCard";
 
 const TraditionalSlider = () => {
-  const navigate = useNavigate();
-
   // Sabit veriler
   const dishes = [
     { id: 1, title: "Baklava", imageUrl: "/yemekler/1.png" },
@@ -20,10 +18,7 @@ const TraditionalSlider = () => {
     { id: 9, title: "Tava Ciğer", imageUrl: "/yemekler/9.png" },
     { id: 10, title: "Mantı", imageUrl: "/yemekler/10.png" },
   ];
-
-  const handleDishClick = (dishId) => {
-    navigate(`/dish/${dishId}`);
-  };
+  
 
   // Slider ayarları
   const sliderSettings = {
@@ -61,17 +56,9 @@ const TraditionalSlider = () => {
         Geleneksel Yemekler
       </Typography>
 
-      {/* react-slick Carousel */}
       <Slider {...sliderSettings}>
         {dishes.map((dish) => (
-          <Paper
-            key={dish.id}
-            className="slider-item"
-            onClick={() => handleDishClick(dish.id)}
-          >
-            <img src={dish.imageUrl} alt={dish.title} className="dish-image" />
-            <Typography className="dish-title">{dish.title}</Typography>
-          </Paper>
+          <DishCard key={dish.id} dish={dish} />
         ))}
       </Slider>
     </div>

@@ -12,14 +12,14 @@
   }
   
   .dish-title-page {
-    font-size: 36px; /* Başlık boyutunu büyüttük */
-    font-weight: bold;
+    font-size: 36px !important; 
+    font-weight: bold !important;
     color: #2c3e50 !important;
   }
   
   .dish-image {
     width: 100%;
-    height: auto;
+    height: 550px;
     object-fit: cover;
     border-radius: 10px;
     margin-top: 10px;
@@ -67,6 +67,7 @@
   .info-card ul li {
     margin-bottom: 10px; /* Liste elemanları arasındaki boşluğu artırdık */
     font-size: 18px; /* Liste elemanları boyutunu arttırdık */
+    color: #4a4a4a;
   }
   
   /* Turuncu renk başlıkları için stil */

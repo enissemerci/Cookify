@@ -92,7 +92,7 @@ const DishDetailPage = () => {
 
   return (
     <Container maxWidth="lg" className="dish-detail-container">
-      <Paper elevation={3} className="dish-header info-card-color">
+      <Paper elevation={3} className="dish-header ">
         <Typography variant="h4" className="dish-title-page">
           {dish.title}
         </Typography>
@@ -112,7 +112,7 @@ const DishDetailPage = () => {
       </Paper>
 
       {/* Malzemeler */}
-      <Paper className="info-card info-card-color">
+      <Paper className="info-card ">
         <Typography variant="h6" style={{ display: "flex", alignItems: "center" }}>
           <Kitchen style={{ marginRight: "10px" }} /> Malzemeler
         </Typography>
@@ -120,7 +120,7 @@ const DishDetailPage = () => {
       </Paper>
 
       {/* Tarif Adımları */}
-      <Paper className="info-card info-card-color">
+      <Paper className="info-card ">
         <Typography variant="h6" style={{ display: "flex", alignItems: "center" }}>
           <PanTool style={{ marginRight: "10px" }} /> Nasıl Yapılır?
         </Typography>

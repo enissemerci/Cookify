@@ -96,7 +96,7 @@ const DishDetailPage = () => {
         <Typography variant="h4" className="dish-title-page">
           {dish.title}
         </Typography>
-        <img src={dish.imageUrl} alt={dish.title} className="dish-image" />
+        <img src={dish.imageUrl} alt={dish.title} className="dish-image-detail" />
         <Typography className="dish-description">{dish.description}</Typography>
       </Paper>
 

@@ -1,0 +1,293 @@
+[
+  {
+    "id": 1,
+    "title": "Baklava",
+    "imageUrl": "/yemekler/1.png",
+    "description": "Baklava, kat kat yufka arasına ceviz veya fıstık eklenerek yapılan geleneksel bir tatlıdır.",
+    "calories": "350 kcal",
+    "prepTime": "20 dakika",
+    "cookTime": "25 dakika",
+    "servings": "4 Kişilik",
+    "ingredients": [
+      "500 gr baklavalık yufka",
+      "250 gr tereyağı",
+      "200 gr ceviz"
+    ],
+    "steps": [
+      "Yufkaları tepsiye kat kat dizin.",
+      "Her kat arasına eritilmiş tereyağı sürün.",
+      "Üzerine ceviz ekleyin ve fırında pişirin."
+    ],
+    "servingTips": [
+      "Üzerine taze dövülmüş Antep fıstığı ekleyerek servis edebilirsiniz. Fıstık, tatlıya ekstra bir lezzet katacaktır.",
+      "Soğuduktan sonra, sıcak içeceğinizle birlikte servis yapın. Çay veya Türk kahvesi bu tatlıyla mükemmel uyum sağlar."
+    ],
+    "tips": [
+      "Tereyağını dikkatlice eritip, yufkaların arasına eşit miktarda sürmek, baklavanın gevrek ve leziz olmasını sağlar.",
+      "Baklavanın pişirme süresi önemlidir, fazla pişirirseniz yufkalar kuruyabilir. Altın rengini aldığında fırından çıkarın."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Lahmacun",
+    "imageUrl": "/yemekler/2.png",
+    "description": "Lahmacun, ince bir hamurun üzerine kıymalı harç sürülüp, fırında pişirilen Türk mutfağına ait bir yemektir.",
+    "calories": "300 kcal",
+    "prepTime": "30 dakika",
+    "cookTime": "15 dakika",
+    "servings": "4 Kişilik",
+    "ingredients": [
+      "300 gr dana kıyması",
+      "1 adet soğan",
+      "1 adet domates",
+      "2 yemek kaşığı domates salçası",
+      "1 tatlı kaşığı pul biber",
+      "Hamur için un, su, tuz"
+    ],
+    "steps": [
+      "Hamuru yoğurun ve küçük bezelere ayırın.",
+      "Kıymayı soğan, domates ve baharatlarla karıştırın.",
+      "Hamurun üzerine hazırladığınız harcı yayın.",
+      "Fırında 15 dakika pişirin ve sıcak servis yapın."
+    ],
+    "servingTips": [
+        "Lahmacunu sıcak servis edin, bu şekilde hamurun çıtırlığı korunur.",
+        "Yanında limon dilimleri ve taze marulla servis edebilirsiniz. Limon, lahmacunun baharatlı tadını dengelemeye yardımcı olur.",
+        "Ayrıca, yanında bir bardak ayran ile sunum yapabilirsiniz. Ayran, lahmacunun ağır tadını hafifletir ve ferahlatıcı olur."
+    ],
+    "tips": [
+        "Hamuru çok ince açmak, lahmacunun çıtır çıtır olmasını sağlar. Kalın hamurla pişirdiğinizde yumuşar ve lezzet kaybı olabilir.",
+        "Fırınınızın sıcaklığına dikkat edin. Lahmacunun altı iyice kızarmalı, ancak üst kısmı yanmamalıdır."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Menemen",
+    "imageUrl": "/yemekler/3.png",
+    "description": "Menemen, yumurta, domates, biber ve baharatlarla yapılan kahvaltı yemeğidir.",
+    "calories": "250 kcal",
+    "prepTime": "10 dakika",
+    "cookTime": "10 dakika",
+    "servings": "2 Kişilik",
+    "ingredients": [
+      "3 adet domates",
+      "2 adet biber",
+      "3 adet yumurta",
+      "1 yemek kaşığı tereyağı",
+      "Tuz, karabiber"
+    ],
+    "steps": [
+      "Biberleri doğrayın ve tereyağında soteleyin.",
+      "Domatesleri ekleyip pişirin.",
+      "Yumurtaları kırıp karıştırın.",
+      "Baharat ekleyip servis edin."
+    ],
+    "servingTips": [
+        "Menemeni sıcak servis edin. Yanında taze yapılmış ekmek ile birlikte mükemmel bir kahvaltı alternatifi sunar.",
+        "Beyaz peynir eklemek, menemeni daha zengin ve lezzetli yapar. Farklı peynirler de kullanabilirsiniz.",
+        "Menemeni yanında taze yapılmış kahve veya çay ile servis etmek, kahvaltınızı tamamlar."
+    ],
+    "tips": [
+        "Yumurtaları pişirirken fazla karıştırmamaya özen gösterin. Az karıştırmak, yumurtaların daha pürüzsüz ve lezzetli olmasını sağlar.",
+        "Menemeni fazla pişirmemek de önemlidir. Yumurtalar hala yumuşak kalmalı, fazla sertleşmemelidir."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Sarma",
+    "imageUrl": "/yemekler/4.png",
+    "description": "Sarma, üzüm yaprakları içine pirinç veya kıymalı harç konularak yapılan geleneksel bir yemektir.",
+    "calories": "200 kcal",
+    "prepTime": "40 dakika",
+    "cookTime": "30 dakika",
+    "servings": "6 Kişilik",
+    "ingredients": [
+      "500 gr üzüm yaprağı",
+      "2 su bardağı pirinç",
+      "1 adet soğan",
+      "1 yemek kaşığı salça",
+      "1 çay bardağı zeytinyağı",
+      "Tuz, baharatlar"
+    ],
+    "steps": [
+      "Pirinci yıkayıp iç harcı hazırlayın.",
+      "Üzüm yapraklarını sıcak suya batırıp yumuşatın.",
+      "Harcı yapraklara koyup sarın.",
+      "Tencereye dizip su ekleyerek pişirin."
+    ],
+    "servingTips": [
+        "Sarmayı sıcak servis edin. Yanında yoğurt, özellikle taze ve ekşi, sarmaların lezzetini dengeler.",
+        "Sarmaları zeytinyağı ile pişirerek daha hafif ve lezzetli bir tat elde edebilirsiniz.",
+        "Yanında kırmızı biberli bir sos da ekleyerek sarmayı daha da lezzetlendirebilirsiniz."
+    ],
+    "tips": [
+        "Sarma harcını hazırlarken pirincin suyunu tam olarak çekmesi gerektiğini unutmayın, fazla su bırakmak sarmaların gevşek olmasına neden olur.",
+        "Üzüm yapraklarını çok yumuşatmadan, sadece hafifçe sıcak suya batırın. Aksi takdirde, sarmalarınız çok yumuşak olabilir."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Etli Kuru Fasulye",
+    "imageUrl": "/yemekler/5.png",
+    "description": "Kuru fasulye, et ve salça ile yapılan geleneksel bir Türk yemeğidir.",
+    "calories": "350 kcal",
+    "prepTime": "12 saat (fasulye ıslatma süresi)",
+    "cookTime": "1 saat",
+    "servings": "4 Kişilik",
+    "ingredients": [
+      "2 su bardağı kuru fasulye",
+      "250 gr kuşbaşı et",
+      "1 adet soğan",
+      "1 yemek kaşığı salça",
+      "Tuz, karabiber"
+    ],
+    "steps": [
+      "Fasulyeleri bir gece önceden ıslatın.",
+      "Eti kavurun ve soğanı ekleyin.",
+      "Salça ve baharatları ekleyin.",
+      "Suyu ekleyip fasulyeleri pişirin."
+    ],
+    "servingTips": [
+        "Yanında pilav ve turşu ile servis yapabilirsiniz. Pilavın saflığı ve turşunun asidik tadı etli kuru fasulyeye mükemmel bir denge katacaktır.",
+        "Fasulyeyi birkaç saat önceden haşlarsanız, pişirme süresi kısalır ve fasulye daha yumuşak olur."
+    ],
+    "tips": [
+        "Fasulyeleri bir gece önceden ıslatarak, pişirme süresini kısaltabilirsiniz. Bu, fasulyelerin daha hızlı pişmesini sağlar.",
+        "Fasulye pişerken baharatları az eklemelisiniz. Baharatları, pişirme işlemi tamamlandıktan sonra ilave ederek daha taze bir tat elde edebilirsiniz."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Çiğ Köfte",
+    "imageUrl": "/yemekler/6.png",
+    "description": "Çiğ köfte, ince bulgur, salça ve baharatlarla yoğrularak hazırlanan bir yemektir.",
+    "calories": "180 kcal",
+    "prepTime": "30 dakika",
+    "cookTime": "Pişirme yok",
+    "servings": "4 Kişilik",
+    "ingredients": [
+      "2 su bardağı ince bulgur",
+      "1 yemek kaşığı domates salçası",
+      "1 tatlı kaşığı pul biber",
+      "1 çay bardağı zeytinyağı",
+      "Limon suyu"
+    ],
+    "steps": [
+      "Bulguru sıcak suyla ıslatın.",
+      "Salça, baharat ve yağ ekleyerek yoğurun.",
+      "Elinizle sıkıp şekil verin.",
+      "Marulla servis edin."
+    ],
+    "servingTips": [
+        "Çiğ köfteyi marullarla sararak servis edebilirsiniz. Marul, çiğ köftenin baharatlı tadını yumuşatır.",
+        "Limon sıkmak, çiğ köftenin baharatlarını dengeler ve daha taze bir tat verir."
+    ],
+    "tips": [
+        "Bulguru yoğururken azar azar su eklemek, kıvamını yumuşatacaktır. Kıvamı tam tutturmak için dikkatli olun.",
+        "Çiğ köfteyi elinizle şekillendirmek yerine, iki kaşık arasında şekil verebilirsiniz. Bu, daha düzgün ve estetik bir görüntü sağlar."
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Pide",
+    "imageUrl": "/yemekler/7.png",
+    "description": "Pide, ince hamurun üzerine çeşitli malzemelerle yapılan Türk mutfağına ait bir yemektir.",
+    "calories": "350 kcal",
+    "prepTime": "20 dakika",
+    "cookTime": "15 dakika",
+    "servings": "4 Kişilik",
+    "ingredients": [
+      "Yufka hamuru",
+      "Kıyma",
+      "Soğan",
+      "Biber",
+      "Domates",
+      "Beyaz peynir"
+    ],
+    "steps": [
+      "Hamuru açın ve üzerine kıyma ve malzemeleri yerleştirin.",
+      "Fırında 15-20 dakika pişirin.",
+      "Sıcak servis edin."
+    ],
+    "servingTips": [
+        "Pideyi fırından çıkarınca üzerine zeytinyağı gezdirmek, lezzetini artırır. Ayrıca, biraz pul biber serpebilirsiniz.",
+        "Yanında ayran, mideyi rahatlatır ve pideyi mükemmel bir şekilde tamamlar."
+    ],
+    "tips": [
+        "Hamurun ince açılması çok önemlidir, aksi takdirde pidenin altı pişmeden üstü yanabilir.",
+        "Pideyi fırına koymadan önce malzemelerin tam olarak yerleştiğinden emin olun. Bu, pişerken malzemelerin dağılmamasını sağlar."
+    ]
+  },
+  {
+    "id": 8,
+    "title": "İskender",
+    "imageUrl": "/yemekler/8.png",
+    "description": "İskender, döner etinin yoğurt, domates sosu ve tereyağı ile servis edildiği bir yemektir.",
+    "calories": "500 kcal",
+    "prepTime": "20 dakika",
+    "cookTime": "30 dakika",
+    "servings": "2 Kişilik",
+    "ingredients": ["Döner eti", "Yoğurt", "Tereyağı", "Domates sosu", "Pide"],
+    "steps": [
+      "Döner etini tavada pişirin.",
+      "Pideyi doğrayıp tabağa yerleştirin.",
+      "Üzerine yoğurt, döner ve domates sosu ekleyin.",
+      "Son olarak tereyağını eritip üzerine gezdirin."
+    ],
+    "servingTips": ["Yanında közlenmiş biber ile servis edebilirsiniz."],
+    "tips": ["Dönerin etini ince ince kesmek daha lezzetli bir sonuç verir."]
+  },
+  {
+    "id": 9,
+    "title": "Tava Ciğer",
+    "imageUrl": "/yemekler/9.png",
+    "description": "Tava ciğer, ince doğranmış ciğerlerin unlanıp tavada kızartılmasıyla yapılan bir yemektir.",
+    "calories": "400 kcal",
+    "prepTime": "10 dakika",
+    "cookTime": "15 dakika",
+    "servings": "2 Kişilik",
+    "ingredients": [
+      "500 gram dana ciğeri",
+      "1 su bardağı un",
+      "Tuz",
+      "Karabiber",
+      "Sıvı yağ"
+    ],
+    "steps": [
+      "Ciğerleri ince dilimler halinde kesin.",
+      "Un, tuz ve karabiberle karıştırın.",
+      "Ciğerleri unlayıp tavada kızartın.",
+      "Sıcak servis edin."
+    ],
+    "servingTips": ["Yanında soğan salatası ile servis edebilirsiniz."],
+    "tips": [
+      "Ciğerin üzerine çok tuz eklemeyin, etin kendi lezzeti yeterlidir."
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Mantı",
+    "imageUrl": "/yemekler/10.png",
+    "description": "Mantı, hamurun içine kıyma konularak yapılan, üzerine yoğurt ve tereyağı gezdirilen bir yemektir.",
+    "calories": "450 kcal",
+    "prepTime": "30 dakika",
+    "cookTime": "25 dakika",
+    "servings": "4 Kişilik",
+    "ingredients": [
+      "2 su bardağı un",
+      "1 yumurta",
+      "500 gram kıyma",
+      "1 soğan",
+      "Yoğurt",
+      "Tereyağı"
+    ],
+    "steps": [
+      "Hamuru yoğurun ve küçük parçalar halinde açın.",
+      "İçine kıyma ve soğan karışımını koyun.",
+      "Hamurları kapatıp kaynar suya atın.",
+      "Pişen mantıları tabağa alıp üzerine yoğurt ve tereyağı gezdirin."
+    ],
+    "servingTips": ["Üzerine nane serpebilirsiniz."],
+    "tips": ["Mantı hamurunu ince açmak, daha lezzetli olmasını sağlar."]
+  }
+]

@@ -3,6 +3,8 @@ const connectDB = require('./config/connectDatabase');
 const userRoutes = require('./routes/userRoutes'); 
 const recipeRoutes = require('./routes/recipeRoutes');
 const uploadRoutes = require('./routes/upload'); // <-- Yeni eklenen satır
+const sliderDishRoutes = require("./routes/sliderDishRoutes");
+
 
 const cors = require('cors');
 
@@ -23,6 +25,8 @@ app.use('/api/users', userRoutes);
 console.log("User routes yüklendi:", userRoutes.stack.map(r => r.route)); // << Bunu ekledik
 app.use('/api/recipes', recipeRoutes);
 app.use('/api/upload', uploadRoutes); // <-- Yeni eklenen satır
+app.use("/api/sliderDishes", sliderDishRoutes);
+
 
 // Basit bir test endpoint'i
 app.get('/', (req, res) => {

@@ -2,10 +2,10 @@
 .login-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Sayfa boyutunu tamamen kaplasın */
   justify-content: center;
   align-items: center;
   background-color: #f4f4f9; /* Hafif gri tonlu pastel arka plan */
+  padding-bottom: 50px;
 }
 
 /* Formun dış kutusu */

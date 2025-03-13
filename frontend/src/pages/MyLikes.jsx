@@ -10,7 +10,7 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
-import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Favorite} from "@mui/icons-material";
 import "./MyLikes.css";
 import fallbackImage from "../assets/foto.webp"; // Burada foto.webp'i import ettik
 
@@ -65,7 +65,7 @@ const MyLikes = () => {
   return (
     <Container>
       <Typography variant="h4" className="page-title">
-        Beğendiğin Tarifler ❤️
+       Beğendiğin Tarifler 
       </Typography>
       {isLoading ? (
         <Typography variant="body1">Yükleniyor...</Typography>
@@ -88,10 +88,17 @@ const MyLikes = () => {
                       alt={recipe.title}
                     />
                     <CardContent>
-                      <Typography variant="h6">{recipe.title}</Typography>
+                      <Typography variant="h6">
+                        {recipe.title.length > 20
+                          ? recipe.title.substring(0,20)+" ..."
+                          : recipe.title
+                        }
+                        
+                      </Typography>
+
                       <Typography variant="body2" color="textSecondary">
-                        {recipe.description.length > 100
-                          ? recipe.description.substring(0, 100) + "..."
+                        {recipe.description.length > 75
+                          ? recipe.description.substring(0, 75) + "..."
                           : recipe.description}
                       </Typography>
                     </CardContent>

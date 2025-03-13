@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, TextField, Typography, Box, Container } from "@mui/material";
 import API from "../api";
 import "./Login.css"; // CSS dosyasını import ediyoruz
+import logo from "../assets/foto.svg"
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -36,6 +37,7 @@ const Login = () => {
 
   return (
     <Box className="login-container">
+      <img src={logo} alt="" style={{maxWidth:"150px",paddingBottom:"50px"}}/>
       <Container component="main" maxWidth="xs" className="login-box">
         <Box className="form-container">
           <Typography

@@ -9,6 +9,7 @@
     gap: 16px;
     position: relative; /* Tarih için sağ üst köşe yerleşimi */
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 350px;
   }
   
   .search-card:hover {

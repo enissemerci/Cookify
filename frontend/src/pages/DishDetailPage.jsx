@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Container, Typography, Paper } from "@mui/material";
 import { LocalDining, AccessTime, LocalFireDepartment, Restaurant,PanTool, Kitchen, ThumbUp, Lightbulb } from "@mui/icons-material"; // Yeni ikonlar
 import "./DishDetailPage.css"; // Yeni CSS dosyamız
+import { useEffect } from "react";
 //backend de tutulacaklar bunlar
 const dishes = [
     {
@@ -85,6 +86,10 @@ const dishes = [
 const DishDetailPage = () => {
   const { id } = useParams();
   const dish = dishes.find((d) => d.id === parseInt(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!dish) {
     return <Typography>Yemek bulunamadı!</Typography>;

@@ -18,7 +18,7 @@ const MainSearchBar = () => {
 
   return (
     <div className="main-search-container">
-      <Typography variant="h4" fontWeight="bold" color="white" className="search-title">
+      <Typography variant="h4" fontWeight="bold" color="" className="search-title">
         Ne pişirmek istersin?
       </Typography>
       <Paper elevation={3} sx={{ borderRadius: 3 }} className="search-paper">

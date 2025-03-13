@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, IconButton, Button, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/foto.svg"; // SVG logosunu içe aktarıyoruz
-import axios from 'axios';
+
 
 const Navbar = () => {
   const navigate = useNavigate();

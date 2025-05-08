@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Stack, Paper, Typography, InputAdornment } from "@mui/material";
 import "./MainSearchBar.css";
 
 const MainSearchBar = () => {
   const [ingredients, setIngredients] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setIsAuthenticated(false);
+    }
+  }, []);
+
   const handleSearch = () => {
+    if (!isAuthenticated) {
+      alert("Arama yapmak için giriş yapmalısınız.");
+      navigate("/login");
+      return;
+    }
+
     if (!ingredients.trim()) {
       alert("Lütfen malzemeleri girin.");
       return;
@@ -37,13 +51,20 @@ const MainSearchBar = () => {
                     variant="contained"
                     className="search-button"
                     onClick={handleSearch}
+                    disabled={!isAuthenticated}
                   >
                     Ara
                   </Button>
                 </InputAdornment>
               ),
             }}
+            disabled={!isAuthenticated}
           />
+          {!isAuthenticated && (
+            <Typography variant="body2" color="error">
+              Arama yapmak için giriş yapmalısınız.
+            </Typography>
+          )}
         </Stack>
       </Paper>
     </div>

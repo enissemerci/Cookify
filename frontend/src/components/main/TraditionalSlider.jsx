@@ -12,7 +12,6 @@ const TraditionalSlider = () => {
     fetch("http://localhost:5001/api/sliderDishes")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetch API Yanıtı:", data);
         setDishes(data);
       })
       .catch((error) => console.error("Slider verileri çekilemedi!", error));

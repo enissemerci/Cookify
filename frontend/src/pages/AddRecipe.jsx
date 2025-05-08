@@ -29,11 +29,12 @@ const AddRecipe = () => {
       console.log('Token bulunamadı!');
       return;
     }
+    const lowerCaseIngredients = ingredients.map(ingredient => ingredient.toLowerCase());
 
     const recipeData = {
       title,
       description,
-      ingredients,
+      ingredients: lowerCaseIngredients, // Küçük harfe dönüştürülmüş malzemeler
       steps,
       image,
       category,

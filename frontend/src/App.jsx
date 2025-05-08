@@ -16,6 +16,9 @@ import RecipeSearch from "./pages/RecipeSearch";
 import MyLikes from "./pages/MyLikes";
 import { MainPage } from "./pages/MainPage";
 import DishDetailPage from "./pages/DishDetailPage";
+import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
           <Route path="/search" element={<RecipeSearch />} />
           <Route path="/my-likes" element={<MyLikes />} />
           <Route path="/dish/:id" element={<DishDetailPage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </Router>

@@ -23,7 +23,7 @@ const Feed = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        console.log("Tarifler:", res.data);
+        //console.log("Tarifler:", res.data);
 
         // Tarifleri en son eklenene göre sıralıyoruz (azalan tarih sırasına göre)
         const sortedRecipes = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));

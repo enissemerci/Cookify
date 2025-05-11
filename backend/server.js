@@ -2,17 +2,14 @@ const express = require('express');
 const connectDB = require('./config/connectDatabase'); 
 const userRoutes = require('./routes/userRoutes'); 
 const recipeRoutes = require('./routes/recipeRoutes');
-const uploadRoutes = require('./routes/upload'); // <-- Yeni eklenen satır
+const uploadRoutes = require('./routes/upload');
 const sliderDishRoutes = require("./routes/sliderDishRoutes");
-
-
+const commentRoutes = require("./routes/commentRoutes");
 const cors = require('cors');
 
 const app = express();
 app.use(express.json()); 
-
 require('dotenv').config();
-
 connectDB();
 
 app.use(cors({
@@ -22,11 +19,12 @@ app.use(cors({
 
 // API Routes
 app.use('/api/users', userRoutes); 
-console.log("User routes yüklendi:", userRoutes.stack.map(r => r.route)); // << Bunu ekledik
 app.use('/api/recipes', recipeRoutes);
-app.use('/api/upload', uploadRoutes); // <-- Yeni eklenen satır
+app.use('/api/upload', uploadRoutes);
 app.use("/api/sliderDishes", sliderDishRoutes);
+app.use("/api/comments", commentRoutes);
 
+console.log("✅ Tüm routerlar başarıyla yüklendi!");
 
 // Basit bir test endpoint'i
 app.get('/', (req, res) => {
@@ -35,7 +33,5 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
-  console.log(`Server çalışıyor, port: ${PORT}`);
+  console.log(`🚀 Server çalışıyor, port: ${PORT}`);
 });
-
-

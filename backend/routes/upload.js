@@ -1,34 +1,29 @@
 const express = require('express');
 const multer = require('multer');
-const { storage } = require('../config/cloudinary'); // Cloudinary ayarlarını içe aktar
-const Recipe = require('../models/Recipe'); // Tarif modelini içe aktar
+const { storage } = require('../config/cloudinary');
 
 const router = express.Router();
 const upload = multer({ storage });
 
-// Tarifi resimle birlikte kaydetme endpoint'i
 router.post('/', upload.single('image'), async (req, res) => {
+  try {
     if (!req.file) {
-        return res.status(400).json({ message: 'Dosya yüklenemedi' });
+      return res.status(400).json({ message: 'Dosya bulunamadı' });
     }
 
-    try {
-        const newRecipe = new Recipe({
-            title: req.body.title, 
-            description: req.body.description,
-            ingredients: req.body.ingredients?.split(',') || [],
-            steps: req.body.steps?.split(',') || [],
-            image: req.file.path, // Cloudinary URL'si burada
-            category: req.body.category,
-            author: req.body.author // Kullanıcı ID'si
-        });
+    console.log("📷 Gelen dosya bilgisi:", req.file);
 
-        await newRecipe.save(); // MongoDB'ye kaydet
-        res.json({ message: 'Tarif kaydedildi!', recipe: newRecipe });
-    } catch (error) {
-        res.status(500).json({ message: 'Tarif kaydedilemedi', error: error.message });
+    const imageUrl = req.file.path || req.file.secure_url;
+
+    if (!imageUrl) {
+      return res.status(500).json({ message: 'Cloudinary URL alınamadı' });
     }
+
+    res.json({ imageUrl });
+  } catch (error) {
+    console.error("❌ Resim yükleme hatası:", error);
+    res.status(500).json({ message: 'Sunucu hatası', error: error.message });
+  }
 });
 
-
-module.exports = router;
+module.exports = router; // ✅ BU SATIR MUTLAKA OLMALI

@@ -1,5 +1,4 @@
 import { Modal, Box, Typography, TextField, Button } from "@mui/material";
-
 import React, { useState, useEffect } from "react";
 
 const EditProfileModal = ({ open, onClose, userInfo, onSave }) => {
@@ -8,6 +7,8 @@ const EditProfileModal = ({ open, onClose, userInfo, onSave }) => {
     bio: "",
     profileImage: "",
   });
+
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     if (userInfo) {
@@ -24,18 +25,40 @@ const EditProfileModal = ({ open, onClose, userInfo, onSave }) => {
     setUpdatedUser({ ...updatedUser, [name]: value });
   };
 
+  const handleImageUpload = async (file) => {
+    const formData = new FormData();
+    formData.append("image", file);
+    setUploading(true);
+
+    try {
+      const res = await fetch("http://localhost:5001/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      if (data?.imageUrl) {
+        setUpdatedUser((prev) => ({ ...prev, profileImage: data.imageUrl }));
+      } else {
+        alert("Resim yüklenemedi.");
+      }
+    } catch (err) {
+      console.error("Yükleme hatası:", err);
+      alert("Resim yüklenemedi.");
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleSubmit = () => {
-    const finalUser = {
-      ...updatedUser,
-      profileImage: updatedUser.profileImage || userInfo.profileImage,
-    };
-    onSave(finalUser); // Güncellenen bilgileri parent component'e gönder
+    onSave(updatedUser); // Yüklenmiş resim URL'si de burada
   };
 
   return (
     <Modal open={open} onClose={onClose}>
-      <Box sx={{ padding: 3, maxWidth: 400, margin: "auto", backgroundColor: "white", marginTop: "10%" }}>
-        <Typography variant="h6">Profilini Düzenle</Typography>
+      <Box sx={{ padding: 3, maxWidth: 400, margin: "auto", backgroundColor: "white", marginTop: "10%", borderRadius: 2 }}>
+        <Typography variant="h6" gutterBottom>Profilini Düzenle</Typography>
+
         <TextField
           label="Kullanıcı Adı"
           name="username"
@@ -44,6 +67,7 @@ const EditProfileModal = ({ open, onClose, userInfo, onSave }) => {
           fullWidth
           margin="normal"
         />
+
         <TextField
           label="Biyografi"
           name="bio"
@@ -52,15 +76,43 @@ const EditProfileModal = ({ open, onClose, userInfo, onSave }) => {
           fullWidth
           margin="normal"
         />
-        <TextField
-          label="Profil Resmi URL"
-          name="profileImage"
-          value={updatedUser.profileImage}
-          onChange={handleChange}
-          fullWidth
-          margin="normal"
+
+        {/* YENİ PROFİL RESMİ YÜKLEME ALANI */}
+        <input
+          type="file"
+          accept="image/*"
+          id="profile-upload"
+          style={{ display: "none" }}
+          onChange={(e) => {
+            const file = e.target.files[0];
+            if (file) handleImageUpload(file);
+          }}
         />
-        <Button variant="contained" color="primary" onClick={handleSubmit} sx={{ marginTop: 2 }}>
+        <label htmlFor="profile-upload">
+          <Button
+            variant="outlined"
+            component="span"
+            fullWidth
+            sx={{ mt: 2 }}
+            disabled={uploading}
+          >
+            {uploading ? "Yükleniyor..." : "Profil Fotoğrafı Yükle"}
+          </Button>
+        </label>
+
+        {updatedUser.profileImage && (
+          <Typography variant="body2" sx={{ mt: 1, wordBreak: "break-word" }}>
+            Yüklenen: {updatedUser.profileImage}
+          </Typography>
+        )}
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSubmit}
+          fullWidth
+          sx={{ marginTop: 2 }}
+        >
           Kaydet
         </Button>
       </Box>

@@ -29,7 +29,14 @@ const Profile = () => {
         const recipesResponse = await axios.get("http://localhost:5001/api/users/recipes", {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setRecipes(recipesResponse.data);  // Tarifleri kaydet
+
+        // En son eklenen en üste gelsin
+        const sortedRecipes = recipesResponse.data.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+
+setRecipes(sortedRecipes);
+
       } catch (err) {
         setError("Veriler alınırken hata oluştu.");
         console.error(err);

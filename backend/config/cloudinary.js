@@ -16,7 +16,8 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: 'cookify', // Yüklenen dosyaların gideceği klasör
-        allowed_formats: ['jpeg', 'png', 'jpg']
+        allowed_formats: ['jpeg', 'png', 'jpg', 'webp']
+
     }
 });
 

@@ -1,10 +1,61 @@
-import React, { useState } from 'react';
-import { TextField, Button, MenuItem, Select, InputLabel, FormControl, FormHelperText, Card, CardContent } from '@mui/material';
-import "./AddRecipeCard.css";
 
-const AddRecipeCard = ({ title, description, ingredients, steps, image, category, setTitle, setDescription, setIngredients, setSteps, setImage, setCategory, handleSubmit }) => {
+import React, { useState } from 'react';
+import {
+  TextField,
+  Button,
+  MenuItem,
+  Select,
+  InputLabel,
+  FormControl,
+  FormHelperText,
+  Card,
+  CardContent,
+} from '@mui/material';
+import './AddRecipeCard.css';
+
+const AddRecipeCard = ({
+  title,
+  description,
+  ingredients,
+  steps,
+  image,
+  category,
+  setTitle,
+  setDescription,
+  setIngredients,
+  setSteps,
+  setImage,
+  setCategory,
+  handleSubmit,
+}) => {
+  const [uploading, setUploading] = useState(false);
+
+  const handleImageUpload = async (file) => {
+    const formData = new FormData();
+    formData.append('image', file);
+
+    try {
+      setUploading(true);
+      const res = await fetch('http://localhost:5001/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (data?.imageUrl) {
+        setImage(data.imageUrl);
+      } else {
+        alert("Resim yüklenemedi.");
+      }
+    } catch (err) {
+      console.error('Resim yüklenemedi:', err);
+      alert("Resim yüklenemedi.");
+    } finally {
+      setUploading(false);
+    }
+  };
+
   return (
-    <div className="card-container"> {/* Bu div card'ı sarmalayan kapsayıcı */}
+    <div className="card-container">
       <Card sx={{ maxWidth: 600, width: '100%' }}>
         <CardContent>
           <h2 className="text-2xl font-bold mb-6 text-center">Yeni Tarif Ekle</h2>
@@ -43,14 +94,40 @@ const AddRecipeCard = ({ title, description, ingredients, steps, image, category
               onChange={(e) => setSteps(e.target.value.split(','))}
               required
             />
-            <TextField
-              label="Resim URL"
-              variant="outlined"
-              fullWidth
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-            />
-            
+
+            <label htmlFor="image-upload">
+              <input
+                id="image-upload"
+                type="file"
+                accept="image/*"
+                style={{ display: 'none' }}
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  if (file) {
+                    handleImageUpload(file);
+                  }
+                }}
+              />
+              <Button
+                variant="outlined"
+                component="span"
+                disabled={uploading}
+              >
+                {uploading ? 'Yükleniyor...' : 'Resmi Yükle'}
+              </Button>
+            </label>
+
+            {image && (
+              <TextField
+                label="Yüklenen Resim URL"
+                variant="outlined"
+                fullWidth
+                value={image}
+                InputProps={{ readOnly: true }}
+                sx={{ mt: 1 }}
+              />
+            )}
+
             <FormControl fullWidth>
               <InputLabel>Kategori</InputLabel>
               <Select

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -23,19 +24,26 @@ const AddRecipe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    if (!image) {
+      alert("Lütfen resmi yükleyin.");
+      return;
+    }
+
     const token = localStorage.getItem('token');
     if (!token) {
       console.log('Token bulunamadı!');
       return;
     }
+
     const lowerCaseIngredients = ingredients.map(ingredient => ingredient.toLowerCase());
+    const lowerCaseSteps = steps.map(step => step.toLowerCase());
 
     const recipeData = {
       title,
       description,
-      ingredients: lowerCaseIngredients, // Küçük harfe dönüştürülmüş malzemeler
-      steps,
+      ingredients: lowerCaseIngredients,
+      steps: lowerCaseSteps,
       image,
       category,
     };
@@ -51,7 +59,7 @@ const AddRecipe = () => {
         }
       );
       console.log(response.data);
-      navigate('/recipes'); // Tarif eklendikten sonra kullanıcıyı feed sayfasına yönlendir
+      navigate('/recipes');
     } catch (error) {
       console.error("Tarif eklerken hata oluştu:", error);
     }
@@ -60,7 +68,6 @@ const AddRecipe = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 4 }}>
       {!isAuthenticated ? (
-        // Kullanıcı giriş yapmamışsa giriş yapmasını isteyen uyarı gösteriyoruz
         <Box textAlign="center" mt={4}>
           <Typography variant="h6" color="error" gutterBottom>
             Tarif eklemek için giriş yapmalısınız.

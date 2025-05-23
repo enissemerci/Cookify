@@ -21,7 +21,7 @@ const CountryDishCard = ({ dish }) => {
           <h4>Püf Noktası</h4>
           <p>{dish.tips}</p>
 
-          <h4>Pişirme Süresi</h4>
+          <h4>Hazırlama Süresi</h4>
           <p>{dish.cookingTime}</p>
 
           <h4>Kalori</h4>

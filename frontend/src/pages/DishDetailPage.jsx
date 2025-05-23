@@ -1,22 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Typography, Paper } from "@mui/material";
-import { LocalDining, AccessTime, LocalFireDepartment, Restaurant, PanTool, Kitchen, ThumbUp, Lightbulb } from "@mui/icons-material";
+import {
+  LocalDining,
+  AccessTime,
+  LocalFireDepartment,
+  Restaurant,
+  PanTool,
+  Kitchen,
+  ThumbUp,
+  Lightbulb
+} from "@mui/icons-material";
 import axios from "axios";
 import "./DishDetailPage.css";
 
-const DishDetailPage = () => {
+const DishDetailPage = ({ type = "dish" }) => {
   const { id } = useParams();
   const [dish, setDish] = useState(null);
 
   useEffect(() => {
+    const apiEndpoint =
+      type === "dessert"
+        ? `http://localhost:5001/api/sliderDesserts/${id}`
+        : `http://localhost:5001/api/sliderDishes/${id}`;
+
     axios
-      .get(`http://localhost:5001/api/sliderDishes/${id}`)
+      .get(apiEndpoint)
       .then((response) => setDish(response.data))
-      .catch((error) => console.error("Yemek verisi alınamadı!", error));
-    
+      .catch((error) => console.error("Veri alınamadı!", error));
+
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [id, type]);
 
   if (!dish) {
     return <Typography>Yemek bulunamadı!</Typography>;
@@ -25,13 +39,17 @@ const DishDetailPage = () => {
   return (
     <Container maxWidth="lg" className="dish-detail-container">
       <Paper elevation={3} className="dish-header">
-        <Typography variant="h4" className="dish-title-page">{dish.title}</Typography>
+        <Typography variant="h4" className="dish-title-page">
+          {dish.title}
+        </Typography>
         <img src={dish.imageUrl} alt={dish.title} className="dish-image-detail" />
         <Typography className="dish-description">{dish.description}</Typography>
       </Paper>
 
       <Paper className="info-card info-card-color">
-        <Typography variant="h6"><LocalDining /> Yemek Bilgileri</Typography>
+        <Typography variant="h6">
+          <LocalDining /> Yemek Bilgileri
+        </Typography>
         <p><LocalFireDepartment /> {dish.calories}</p>
         <p><AccessTime /> Hazırlık: {dish.prepTime}</p>
         <p><Restaurant /> Pişirme: {dish.cookTime}</p>

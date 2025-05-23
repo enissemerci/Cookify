@@ -38,7 +38,9 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<RecipeSearch />} />
           <Route path="/my-likes" element={<MyLikes />} />
-          <Route path="/dish/:id" element={<DishDetailPage />} />
+          <Route path="/dish/:id" element={<DishDetailPage type="dish" />} />
+<Route path="/dessert/:id" element={<DishDetailPage type="dessert" />} />
+
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />

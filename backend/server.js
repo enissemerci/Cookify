@@ -6,6 +6,7 @@ const uploadRoutes = require('./routes/upload');
 const sliderDishRoutes = require("./routes/sliderDishRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const cors = require('cors');
+const sliderDessertRoutes = require("./routes/sliderDessertRoutes");
 
 const app = express();
 app.use(express.json()); 
@@ -23,6 +24,7 @@ app.use('/api/recipes', recipeRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use("/api/sliderDishes", sliderDishRoutes);
 app.use("/api/comments", commentRoutes);
+app.use("/api/sliderDesserts", sliderDessertRoutes);
 
 console.log("✅ Tüm routerlar başarıyla yüklendi!");
 

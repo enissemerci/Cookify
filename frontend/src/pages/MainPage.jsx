@@ -1,7 +1,8 @@
-import React from 'react'
-import { Typography, Container } from '@mui/material' // Material UI komponentlerini import ettik
-import MainSearchBar from '../components/main/MainSeachBar'
-import TraditionalSlider from '../components/main/TraditionalSlider'
+import React from 'react';
+import { Typography, Container } from '@mui/material';
+import MainSearchBar from '../components/main/MainSeachBar';
+import TraditionalSlider from '../components/main/TraditionalSlider';
+import TraditionalDessertSlider from '../components/main/TraditionalDessertSlider'; // ✅ bunu ekle
 
 export const MainPage = () => {
   return (
@@ -16,9 +17,10 @@ export const MainPage = () => {
         </Typography>
       </Container>
 
-      {/* Arama Çubuğu ve Slider */}
+      {/* Arama Çubuğu ve Sliderlar */}
       <MainSearchBar />
       <TraditionalSlider />
+      <TraditionalDessertSlider /> {/* ✅ yeni slider burada */}
     </div>
-  )
-}
+  );
+};

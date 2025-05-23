@@ -1,32 +1,40 @@
 [
   {
-    "id": 1,
-    "title": "Baklava",
-    "imageUrl": "/yemekler/1.png",
-    "description": "Baklava, kat kat yufka arasına ceviz veya fıstık eklenerek yapılan geleneksel bir tatlıdır.",
-    "calories": "350 kcal",
-    "prepTime": "20 dakika",
-    "cookTime": "25 dakika",
-    "servings": "4 Kişilik",
-    "ingredients": [
-      "500 gr baklavalık yufka",
-      "250 gr tereyağı",
-      "200 gr ceviz"
-    ],
-    "steps": [
-      "Yufkaları tepsiye kat kat dizin.",
-      "Her kat arasına eritilmiş tereyağı sürün.",
-      "Üzerine ceviz ekleyin ve fırında pişirin."
-    ],
-    "servingTips": [
-      "Üzerine taze dövülmüş Antep fıstığı ekleyerek servis edebilirsiniz. Fıstık, tatlıya ekstra bir lezzet katacaktır.",
-      "Soğuduktan sonra, sıcak içeceğinizle birlikte servis yapın. Çay veya Türk kahvesi bu tatlıyla mükemmel uyum sağlar."
-    ],
-    "tips": [
-      "Tereyağını dikkatlice eritip, yufkaların arasına eşit miktarda sürmek, baklavanın gevrek ve leziz olmasını sağlar.",
-      "Baklavanın pişirme süresi önemlidir, fazla pişirirseniz yufkalar kuruyabilir. Altın rengini aldığında fırından çıkarın."
-    ]
-  },
+  "id": 1,
+  "title": "İçli Köfte",
+  "imageUrl": "/yemekler/1.png",
+  "description": "İçli köfte, ince bulgurdan yapılan dış hamurun içine kıymalı harç konularak hazırlanan nefis bir Anadolu lezzetidir.",
+  "calories": "290 kcal",
+  "prepTime": "35 dakika",
+  "cookTime": "20 dakika",
+  "servings": "4 Kişilik",
+  "ingredients": [
+    "2 su bardağı ince bulgur",
+    "1 su bardağı irmik",
+    "1 yemek kaşığı biber salçası",
+    "1 tatlı kaşığı tuz",
+    "250 gr kıyma",
+    "1 adet soğan",
+    "Karabiber, pul biber",
+    "Sıvı yağ"
+  ],
+  "steps": [
+    "İç harç için kıymayı soğan ve baharatlarla kavurun, soğumaya bırakın.",
+    "Bulgur, irmik, salça ve tuzu yoğurarak hamur haline getirin.",
+    "Hamurdan ceviz büyüklüğünde parçalar koparın, içini açıp kıymalı harçla doldurun ve kapatın.",
+    "Kızgın yağda altın rengini alana kadar kızartın."
+  ],
+  "servingTips": [
+    "Yanında limon dilimiyle servis edebilirsiniz.",
+    "Marul yaprakları üzerinde sunmak şık bir görünüm sağlar."
+  ],
+  "tips": [
+    "Hamuru yoğururken azar azar su ekleyin, çok yumuşak ya da sert olmamalı.",
+    "İç harcın soğuk olması köftenin dağılmasını önler.",
+    "Kızartma yerine haşlama yöntemini de tercih edebilirsiniz."
+  ]
+},
+
   {
     "id": 2,
     "title": "Lahmacun",

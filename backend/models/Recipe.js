@@ -8,10 +8,13 @@ const RecipeSchema = new mongoose.Schema({
   image: { type: String, default: '' }, // Cloudinary URL
   category: { type: String, enum: ['Tatlı', 'Ana Yemek', 'Atıştırmalık', 'İçecek', 'Diğer'], required: true }, // Kategori
   likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Like' }], // Beğeniler
-  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }], // Yorumlar
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
+  tags: [{ type: String }], // Yeni alan – etiketler
+ // Yorumlar
   author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Tarifin sahibi
   challenge: { type: mongoose.Schema.Types.ObjectId, ref: 'Challenge', default: null } // Eğer meydan okuma tarifiyse
 }, { timestamps: true });
+  
 
 const Recipe = mongoose.model('Recipe', RecipeSchema);
 

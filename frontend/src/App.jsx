@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// react-slick stil dosyasını dahil edin
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Register from "./pages/Register";
@@ -19,6 +18,10 @@ import DishDetailPage from "./pages/DishDetailPage";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import WorldCuisine from "./pages/WorldCuisine";
+import CountryRecipes from "./pages/CountryRecipes"; 
+
+
 
 function App() {
   return (
@@ -39,6 +42,11 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/world-cuisine/:country" element={<CountryRecipes />} />
+          <Route path="/world-cuisine" element={<WorldCuisine />} />
+          <Route path="/world/:country" element={<CountryRecipes />} />
+
+          
         </Routes>
         <Footer />
       </Router>

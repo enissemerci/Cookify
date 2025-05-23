@@ -44,22 +44,39 @@ const getAllRecipes = async (req, res) => {
   }
 };
 
+const removeUnits = (text) => {
+  return text
+    .toLowerCase()
+    .replace(/\b\d+\s?(ml|cl|gr|g|kg|l|litre|adet|yemek kaşığı|çay kaşığı|tatlı kaşığı|bardak|su bardağı|tutam|çimdik|küçük|büyük)\b/g, '')
+    .replace(/\d+/g, '') // sayıları temizle
+    .replace(/\s{2,}/g, ' ') // çift boşlukları sadeleştir
+    .trim();
+};
+
 const searchRecipes = async (req, res) => {
-  const { ingredients } = req.query; // Kullanıcıdan gelen malzemeler
-  const ingredientsArray = ingredients.split(",").map(ingredient => ingredient.trim().toLowerCase()); // Malzemeleri küçük harfe çeviriyoruz
+  const { ingredients } = req.query;
+
+  const rawIngredients = ingredients.split(',').map(i => i.trim().toLowerCase());
+  const cleanedSearch = rawIngredients.map(removeUnits); // normalize edilmiş arama
 
   try {
-    // Tarifleri malzemelere göre ara
-    const recipes = await Recipe.find({
-      ingredients: { $all: ingredientsArray } // Malzemelerin tamamının bulunmasını sağlarız
+    const allRecipes = await Recipe.find();
+
+    // Her tarifin malzemeleri normalize ediliyor ve karşılaştırılıyor
+    const filtered = allRecipes.filter(recipe => {
+      const cleanedIngredients = recipe.ingredients.map(removeUnits);
+      return cleanedSearch.every(searchItem =>
+        cleanedIngredients.some(ing => ing.includes(searchItem))
+      );
     });
 
-    res.json(recipes); // Sonuçları döndür
+    res.json(filtered);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Tarifler bulunamadı!" });
   }
 };
+
 
 // Tarif güncelleme
 const updateRecipe = async (req, res) => {
@@ -126,6 +143,9 @@ const toggleFavorite = async (req, res) => {
       res.status(500).json({ message: 'İşlem başarısız', error });
   }
 };
+
+
+
 
 
 module.exports = {

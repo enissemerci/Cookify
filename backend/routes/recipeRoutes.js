@@ -5,6 +5,8 @@ const authenticateToken = require('../middleware/authMiddleware');
 const { toggleFavorite } = require('../controllers/recipeController');
 
 
+
+
 // Yeni tarif oluştur
 router.post('/add', authenticateToken, createRecipe);
 

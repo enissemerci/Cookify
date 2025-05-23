@@ -35,6 +35,7 @@ const Navbar = () => {
           </Link>
 
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2, alignItems: "center" }}>
+            <Button component={Link} to="/cocktails"sx={{ color: "white" }}>Kokteyller</Button>
             <Button component={Link} to="/world-cuisine"sx={{ color: "white" }}>Dünyadan Tatlar</Button>
             <Button component={Link} to="/recipes" sx={{ color: "white" }}>Tarifler</Button>
             <Button component={Link} to="/add-recipe" sx={{ color: "white" }}>Tarif Ekle</Button>

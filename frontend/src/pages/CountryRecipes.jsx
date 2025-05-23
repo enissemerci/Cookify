@@ -16,14 +16,6 @@ import spainRecipes from "../data/spainRecipes";
 import brazilRecipes from "../data/brazilRecipes";
 
 
-
-
-
-
-
-
-
-
 const recipeMap = {
   "İtalya": italyRecipes,
   "Japonya": japanRecipes,
@@ -38,17 +30,6 @@ const recipeMap = {
   "İspanya": spainRecipes,
   "Brezilya": brazilRecipes,
 
-
-
-
-
-
-
-
-
-
-  // "Türkiye": turkeyRecipes,
-  // "Fransa": franceRecipes,
 };
 
 const CountryRecipes = () => {

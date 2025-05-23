@@ -20,6 +20,7 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import WorldCuisine from "./pages/WorldCuisine";
 import CountryRecipes from "./pages/CountryRecipes"; 
+import CocktailPage from "./pages/CocktailPage";
 
 
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/world-cuisine/:country" element={<CountryRecipes />} />
           <Route path="/world-cuisine" element={<WorldCuisine />} />
           <Route path="/world/:country" element={<CountryRecipes />} />
+          <Route path="/cocktails" element={<CocktailPage />} />
 
           
         </Routes>

@@ -1,0 +1,17 @@
+    .cocktail-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.cocktail-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f97316;
+}
+
+.cocktail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}

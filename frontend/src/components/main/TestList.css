@@ -1,0 +1,52 @@
+.test-list-section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.test-list-title {
+  font-size: 28px;
+  color: #EB5A3C;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.test-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.test-card {
+  width: 300px;
+  background-color: #fff8f3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.test-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.test-card h3 {
+  font-size: 20px;
+  margin: 10px;
+  color: #EB5A3C;
+}
+
+.test-card p {
+  font-size: 16px;
+  color: #444;
+  padding: 0 10px 15px;
+}
+
+.test-card:hover {
+  transform: scale(1.03);
+}

@@ -21,6 +21,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import WorldCuisine from "./pages/WorldCuisine";
 import CountryRecipes from "./pages/CountryRecipes"; 
 import CocktailPage from "./pages/CocktailPage";
+import TestDetailPage from "./pages/TestDetailPage";
+import TestResultPage from "./pages/TestResultPage";
+
+
 
 
 
@@ -49,6 +53,10 @@ function App() {
           <Route path="/world-cuisine" element={<WorldCuisine />} />
           <Route path="/world/:country" element={<CountryRecipes />} />
           <Route path="/cocktails" element={<CocktailPage />} />
+          <Route path="/test/:id" element={<TestDetailPage />} />
+          <Route path="/test-result/:result" element={<TestResultPage />} />
+
+
 
           
         </Routes>

@@ -2,7 +2,9 @@ import React from 'react';
 import { Typography, Container } from '@mui/material';
 import MainSearchBar from '../components/main/MainSeachBar';
 import TraditionalSlider from '../components/main/TraditionalSlider';
-import TraditionalDessertSlider from '../components/main/TraditionalDessertSlider'; // ✅ bunu ekle
+import TraditionalDessertSlider from '../components/main/TraditionalDessertSlider';
+import TestList from "../components/main/TestList";
+
 
 export const MainPage = () => {
   return (
@@ -20,7 +22,9 @@ export const MainPage = () => {
       {/* Arama Çubuğu ve Sliderlar */}
       <MainSearchBar />
       <TraditionalSlider />
-      <TraditionalDessertSlider /> {/* ✅ yeni slider burada */}
+      <TraditionalDessertSlider />
+<TestList />
+ {/* ✅ yeni slider burada */}
     </div>
   );
 };

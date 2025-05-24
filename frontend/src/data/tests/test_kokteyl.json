@@ -1,0 +1,226 @@
+{
+  "title": "Hangi kokteyl sensin?",
+  "description": "Zevklerine göre ruhunu yansıtan kokteyli keşfet!",
+  "questions": [
+    {
+      "question": "Bir yaz akşamında sahilde ne yaparsın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748072233/evgenyshch-beautiful-golden-landscape-of-summer-sunset-or-sunrise-at-black-sea-and-evening-nature-background_u-l-q1a2hn90_ekz3tv.jpg",
+      "options": [
+        {
+          "text": "Dans ederim",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Yalnız yürüyüş yaparım",
+          "value": "Martini"
+        },
+        {
+          "text": "Arkadaşlarla otururum",
+          "value": "Mojito"
+        },
+        {
+          "text": "Fotoğraf çekerim",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "En çok hangi tat seni yansıtır?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081719/unnamed_d2x8ge.png",
+      "options": [
+        {
+          "text": "Tatlı",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Ekşi",
+          "value": "Mojito"
+        },
+        {
+          "text": "Acımsı",
+          "value": "Negroni"
+        },
+        {
+          "text": "Yumuşak ama net",
+          "value": "Martini"
+        }
+      ]
+    },
+    {
+      "question": "Sosyal ortamlarda nasılsın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081718/Untitled-design-109-970x546-1_uc1lc1.jpg",
+      "options": [
+        {
+          "text": "Merkezde ben varım!",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Rahat ve enerjik",
+          "value": "Mojito"
+        },
+        {
+          "text": "Sakin ve cool",
+          "value": "Martini"
+        },
+        {
+          "text": "Az ama öz",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "Tatilde nereye gitmek istersin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081718/Holiday_on_a_budget_uaxjtp.jpg",
+      "options": [
+        {
+          "text": "Karayipler",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Barselona",
+          "value": "Mojito"
+        },
+        {
+          "text": "New York",
+          "value": "Martini"
+        },
+        {
+          "text": "İtalya kıyıları",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "Favori müzik tarzın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081718/photo-1524368535928-5b5e00ddc76b_m20o6n.jpg",
+      "options": [
+        {
+          "text": "Pop",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Latin",
+          "value": "Mojito"
+        },
+        {
+          "text": "Caz",
+          "value": "Martini"
+        },
+        {
+          "text": "Rock",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "Bir restoranda ne yersin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081717/izaka_j2eypz.webp",
+      "options": [
+        {
+          "text": "Tropikal meyve tabağı",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Falafel",
+          "value": "Mojito"
+        },
+        {
+          "text": "Deniz ürünleri",
+          "value": "Martini"
+        },
+        {
+          "text": "Kırmızı et",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "En güçlü yönün nedir?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081717/Employee-Strengths-With-Examples_nvaezl.png",
+      "options": [
+        {
+          "text": "Neşe",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Uyum sağlama",
+          "value": "Mojito"
+        },
+        {
+          "text": "Zarafet",
+          "value": "Martini"
+        },
+        {
+          "text": "Karizma",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "Hafta sonu planın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081717/1633506898-1633506897480_augzql.avif",
+      "options": [
+        {
+          "text": "Deniz kenarında kitap",
+          "value": "Martini"
+        },
+        {
+          "text": "Dans ve eğlence",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Parkta piknik",
+          "value": "Mojito"
+        },
+        {
+          "text": "Müze gezisi",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "Arkadaşların seni nasıl tanımlar?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081717/friends1_eyyojh.webp",
+      "options": [
+        {
+          "text": "Eğlenceli",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Enerjik",
+          "value": "Mojito"
+        },
+        {
+          "text": "Şık",
+          "value": "Martini"
+        },
+        {
+          "text": "Gizemli",
+          "value": "Negroni"
+        }
+      ]
+    },
+    {
+      "question": "Bir kelimeyle seni tanımlayan duygu?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748081718/How-to-be-less-emotional-scaled_nfseka.jpg",
+      "options": [
+        {
+          "text": "Hayat dolu",
+          "value": "Pina Colada"
+        },
+        {
+          "text": "Canlı",
+          "value": "Mojito"
+        },
+        {
+          "text": "Dingin",
+          "value": "Martini"
+        },
+        {
+          "text": "Derin",
+          "value": "Negroni"
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Box, Typography, TextField, Button, MenuItem } from "@mui/material";
+import CATEGORIES from "../constants/categories"; // aynı dosyadan al
 
-const categories = [
-  "Tatlı",
-  "Ana Yemek",
-  "Aperatif",
-  "İçecek",
-  "Kahvaltı",
-  "Vejetaryen",
-  "Vegan",
-];
+
 
 const EditRecipeModal = ({ open, onClose, recipe, onSave }) => {
   const [updatedRecipe, setUpdatedRecipe] = useState({
@@ -190,11 +183,12 @@ const EditRecipeModal = ({ open, onClose, recipe, onSave }) => {
           fullWidth
           margin="normal"
         >
-          {categories.map((option) => (
+          {CATEGORIES.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
           ))}
+
         </TextField>
 
         <Button

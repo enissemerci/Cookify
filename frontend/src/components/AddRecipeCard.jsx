@@ -1,3 +1,4 @@
+import CATEGORIES from "../constants/categories";
 
 import React, { useState } from 'react';
 import {
@@ -131,16 +132,16 @@ const AddRecipeCard = ({
             <FormControl fullWidth>
               <InputLabel>Kategori</InputLabel>
               <Select
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-                label="Kategori"
-                required
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  label="Kategori"
+                  required
               >
-                <MenuItem value="Tatlı">Tatlı</MenuItem>
-                <MenuItem value="Ana Yemek">Ana Yemek</MenuItem>
-                <MenuItem value="Atıştırmalık">Atıştırmalık</MenuItem>
-                <MenuItem value="İçecek">İçecek</MenuItem>
-                <MenuItem value="Diğer">Diğer</MenuItem>
+                  {CATEGORIES.map((cat) => (
+                    <MenuItem key={cat} value={cat}>
+                      {cat}
+                    </MenuItem>
+              ))}
               </Select>
               <FormHelperText>Bir kategori seçin</FormHelperText>
             </FormControl>

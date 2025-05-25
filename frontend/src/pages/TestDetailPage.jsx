@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import testData from "../data/tests/test_kokteyl.json";
+import kokteylTest from "../data/tests/test_kokteyl.json";
+import yemekTest from "../data/tests/test_yemek_karakteri.json";
 import "./TestDetailPage.css";
 
 const TestDetailPage = () => {
@@ -11,8 +12,13 @@ const TestDetailPage = () => {
   const [answers, setAnswers] = useState([]);
   const [scores, setScores] = useState({});
 
-  const test = testData;
+  let test;
+  if (id === "kokteyl") test = kokteylTest;
+  else if (id === "yemek_karakteri") test = yemekTest;
+  else return <p>Test bulunamadı.</p>;
+
   const totalQuestions = test.questions.length;
+  const current = test.questions[currentQuestion];
 
   const handleOptionClick = (value) => {
     const updatedAnswers = [...answers];
@@ -26,22 +32,17 @@ const TestDetailPage = () => {
       setScores(updatedScores);
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      // Son sorudaysa sonucu hesapla ve yönlendir
       const result = Object.entries(updatedScores).sort((a, b) => b[1] - a[1])[0][0];
-      navigate(`/test-result/${result}`);
+      navigate(`/test-result/${result}?test=${id}`);
     }
   };
 
-  const goBack = () => {
-    setCurrentQuestion((prev) => Math.max(prev - 1, 0));
-  };
-
-  const current = test.questions[currentQuestion];
+  const goBack = () => setCurrentQuestion((prev) => Math.max(prev - 1, 0));
 
   return (
     <div className="test-container">
       <h2 className="test-title">{test.title}</h2>
-      <img src={current.image} alt="Soru görseli" className="test-image" />
+      {current.image && <img src={current.image} alt="Soru görseli" className="test-image" />}
       <p className="question-text">{current.question}</p>
       <div className="option-grid">
         {current.options.map((opt, i) => (

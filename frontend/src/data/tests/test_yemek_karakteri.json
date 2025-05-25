@@ -1,0 +1,206 @@
+{
+  "id": "yemek_karakteri",
+  "title": "Kişiliğin Bir Yemek Olsaydı Ne Olurdu?",
+  "description": "Cevaplarına göre karakterine en çok uyan yemeği keşfet!",
+  "questions": [
+    {
+      "question": "Kendini nasıl tanımlarsın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748118794/set-people-hiding-faces-social-masks_107791-12910_wrby0x.avif",
+      "options": [
+        {
+          "text": "Sıcakkanlı ve samimi",
+          "value": "manti"
+        },
+        {
+          "text": "Dikkat çekici ve enerjik",
+          "value": "pizza"
+        },
+        {
+          "text": "Duygusal ve anlayışlı",
+          "value": "corba"
+        },
+        {
+          "text": "Farklı ve gizemli",
+          "value": "sushi"
+        }
+      ]
+    },
+    {
+      "question": "En yakın arkadaşların senin hakkında ne söylerdi?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119061/istockphoto-1148168579-170667a_cq841u.jpg",
+      "options": [
+        {
+          "text": "Onun yanında kendimi rahat hissediyorum",
+          "value": "manti"
+        },
+        {
+          "text": "Çok eğlenceli ve neşelidir",
+          "value": "pizza"
+        },
+        {
+          "text": "Her zaman anlayışlıdır",
+          "value": "corba"
+        },
+        {
+          "text": "Kendine has bir havası vardır",
+          "value": "sushi"
+        }
+      ]
+    },
+    {
+      "question": "Zor bir günün ardından ne yapmak istersin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119163/istockphoto-1314928174-612x612_fknuig.jpg",
+      "options": [
+        {
+          "text": "Sevdiklerimle vakit geçirmek",
+          "value": "manti"
+        },
+        {
+          "text": "Bir şeyler izleyip kafa dağıtmak",
+          "value": "pizza"
+        },
+        {
+          "text": "Sessizce dinlenmek",
+          "value": "corba"
+        },
+        {
+          "text": "Yalnız kalıp düşünmek",
+          "value": "sushi"
+        }
+      ]
+    },
+    {
+      "question": "Bir tatil planlasan nereye gitmek isterdin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119266/cabin_rentals_hero_61a1620844_bjk5el.jpg",
+      "options": [
+        {
+          "text": "Tarihi ve mistik bir şehir",
+          "value": "manti"
+        },
+        {
+          "text": "Büyük ve hareketli bir şehir",
+          "value": "pizza"
+        },
+        {
+          "text": "Sessiz, doğayla iç içe bir yer",
+          "value": "corba"
+        },
+        {
+          "text": "Alternatif ve keşfedilmemiş bir destinasyon",
+          "value": "sushi"
+        }
+      ]
+    },
+
+    {
+      "question": "Bir arkadaşın kötü hissediyorsa ne yaparsın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119371/Emotional-Sponge-Young-People-Supporting-Friends_hiwyyx.jpg",
+      "options": [
+        {
+          "text": "Yanında olur, destek veririm",
+          "value": "manti"
+        },
+        {
+          "text": "Onu güldürmeye çalışırım",
+          "value": "pizza"
+        },
+        {
+          "text": "Sessizce dinlerim",
+          "value": "corba"
+        },
+        {
+          "text": "Farklı bir şey öneririm",
+          "value": "sushi"
+        }
+      ]
+    },
+    {
+      "question": "Hangisi seni daha çok mutlu eder?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119451/Woman-traveling-alone-scaled-1_xv2swx.webp",
+      "options": [
+        {
+          "text": "Evde geçirilen huzurlu bir akşam",
+          "value": "corba"
+        },
+        {
+          "text": "Kalabalık bir arkadaş grubu",
+          "value": "pizza"
+        },
+        {
+          "text": "Sakin bir doğa yürüyüşü",
+          "value": "manti"
+        },
+        {
+          "text": "Yeni bir yeri keşfetmek",
+          "value": "sushi"
+        }
+      ]
+    },
+    {
+      "question": "Birine değer verdiğini nasıl gösterirsin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119575/pexels-anthony-shkraba-5810664-2-1-e1639059553731-2_ggtd0b.jpg",
+      "options": [
+        {
+          "text": "Yemek yaparım",
+          "value": "manti"
+        },
+        {
+          "text": "Hediye alırım",
+          "value": "pizza"
+        },
+        {
+          "text": "Onu dinlerim",
+          "value": "corba"
+        },
+        {
+          "text": "Farklı bir sürpriz hazırlarım",
+          "value": "sushi"
+        }
+      ]
+    },
+    {
+      "question": "Duygularını nasıl ifade edersin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119739/71ZpsUkwCyL_nphxmw.jpg",
+      "options": [
+        {
+          "text": "Samimi konuşmalarla",
+          "value": "manti"
+        },
+        {
+          "text": "Hareketlerimle belli ederim",
+          "value": "pizza"
+        },
+        {
+          "text": "Yazı yazarım",
+          "value": "corba"
+        },
+        {
+          "text": "Kolay kolay ifade etmem",
+          "value": "sushi"
+        }
+      ]
+    }
+  ],
+  "results": {
+    "pizza": {
+      "title": "Sen bir Pizza ruhusun!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119898/pizza-tarifi-bg-02_vtfxjh.webp",
+      "description": "Sen tam anlamıyla hayatın neşesini içinde barındıran bir insansın! İnsanlarla vakit geçirmekten, eğlenmekten ve enerjini paylaşmaktan büyük keyif alıyorsun. Senin yanındayken kimse sıkılmaz, herkes kendini daha canlı ve mutlu hisseder. Tıpkı bir pizza gibi her ortama uyum sağlayan, renkli ve çeşitli bir kişiliğin var."
+    },
+    "sushi": {
+      "title": "Sen bir Sushi ruhusun!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119900/blog-100_tap5f3.webp",
+      "description": "Sen farklı ve alışılmışın dışında bir insansın. Tıpkı sushi gibi, ilk bakışta herkes tarafından anlaşılmayabilirsin ama seni tanıyanlar özel ve derin biri olduğunu bilirler. Senin doğanda biraz mesafe var, her insana hemen açılmıyorsun. Ama birine güvendiğinde son derece sadık oluyorsun. İlginç ve farklı zevklere sahipsin. Senin gibi biriyle vakit geçirmek, sıradanlıktan uzaklaşmak demektir. Bazen fazla gizemli kalman insanları şaşırtabilir, ama bu senin doğal çekiciliğinin bir parçası. Kendini açtığında, gerçek dostlukların ne kadar değerli olduğunu göreceksin!"
+    },
+    "manti": {
+      "title": "Sen bir Mantı ruhusun!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119900/Ads%C4%B1z-tasar%C4%B1m-2024-04-22T131045.832_fsivhf.png",
+      "description": "Sen tam anlamıyla sıcacık, samimi ve içten bir insansın! Tıpkı mantı gibi, dışarıdan bakıldığında mütevazı ama içinde derin bir zenginlik barındırıyorsun. İnsanlar senin yanında kendini rahat hissediyor, çünkü doğallığın ve içtenliğin sayesinde herkesle güçlü bağlar kurabiliyorsun. Samimi, sevdiklerine düşkün ve değer bilen bir yapın var."
+    },
+    "corba": {
+      "title": "Sen bir Çorba ruhusun!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748119899/Caramelized-Leek-and-Potato-Soup-Featured-1_k8adya.jpg",
+      "description": "Sen hayatı ağırdan almayı seven, insanlara güven veren bir insansın. Zor anlarda herkes sana gelir, çünkü sen onları anlamaya ve çözüm sunmaya yatkınsın. Tıpkı bir çorba gibi içini ısıtan, samimi ve nostaljik bir ruhun var. Senin doğanda derinlik ve sadelik var. Gösterişli ya da aşırı hareketli şeylerden hoşlanmıyorsun. Bunun yerine sağlam ilişkiler kurmayı, sevdiklerine güven vermeyi tercih ediyorsun."
+    }
+  }
+}

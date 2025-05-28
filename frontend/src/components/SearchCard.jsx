@@ -19,9 +19,11 @@ const SearchCard = ({ recipe }) => {
   };
 
   return (
+    
     <div className="search-card">
       {/* Tarifin Oluşturulma Tarihi */}
       <div className="creation-date">{creationDate}</div>
+      
 
       {/* Yemek Fotoğrafı */}
       <img
@@ -98,6 +100,7 @@ const SearchCard = ({ recipe }) => {
           </Button>
         </DialogActions>
       </Dialog>
+
     </div>
   );
 };

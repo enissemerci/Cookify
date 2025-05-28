@@ -13,11 +13,13 @@
 }
 
 .test-list-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 sabit sütun */
   gap: 20px;
+  justify-content: center; /* satırın ortasında hizalar */
 }
+
+
 
 .test-card {
   width: 300px;

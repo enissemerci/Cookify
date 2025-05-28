@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import kokteylTest from "../data/tests/test_kokteyl.json";
 import yemekTest from "../data/tests/test_yemek_karakteri.json";
+import saglikliTest from "../data/tests/test_saglikli_beslenme.json";
+import tatliMilletTest from "../data/tests/test_tatli_millet.json";
+
 import "./TestDetailPage.css";
 
 const TestDetailPage = () => {
@@ -13,9 +16,13 @@ const TestDetailPage = () => {
   const [scores, setScores] = useState({});
 
   let test;
-  if (id === "kokteyl") test = kokteylTest;
-  else if (id === "yemek_karakteri") test = yemekTest;
-  else return <p>Test bulunamadı.</p>;
+if (id === "kokteyl") test = kokteylTest;
+else if (id === "yemek_karakteri") test = yemekTest;
+else if (id === "saglikli_beslenme") test = saglikliTest;
+else if (id === "tatli_millet") test = tatliMilletTest;
+
+else return <p>Test bulunamadı.</p>;
+
 
   const totalQuestions = test.questions.length;
   const current = test.questions[currentQuestion];

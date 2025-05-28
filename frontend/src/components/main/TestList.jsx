@@ -14,7 +14,21 @@ const tests = [
   title: "Kişiliğin Bir Yemek Olsaydı Ne Olurdu?",
   image: "https://res.cloudinary.com/dtwnowxud/image/upload/v1748104127/s-a7b1a8243d3fcc3b71e1a6794f45d21defa88892_jmqxtx.jpg",
   description: "Kişiliğini en iyi anlatan yemek hangisi? Hadi keşfet!"
+  },
+  {
+  id: "saglikli_beslenme",
+  title: "Ne Kadar Sağlıklı Besleniyorsun?",
+  image: "https://res.cloudinary.com/dtwnowxud/image/upload/v1748414159/s-c5cb9d877801b108bc1ce5d1058e737936cd5645_mbln31.jpg",
+  description: "Yeme alışkanlıklarına göre sağlıklı mısın öğren!"
+  },
+  {
+  id: "tatli_millet",
+  title: "Seçtiğin Tatlılara Göre Hangi Millettensin?",
+  image: "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426393/s-7ae744c83188245ff7a152191bfdc70f418c41ea_blrcfm.jpg",
+  description: "Tatlı zevkine göre hangi mutfağa aitsin? Hemen öğren!"
 }
+
+
 
   // Daha fazla test buraya eklenebilir
 ];

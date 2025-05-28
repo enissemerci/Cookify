@@ -1,0 +1,109 @@
+{
+  "id": "tatli_millet",
+  "title": "Seçtiğin Tatlılara Göre Hangi Millettensin?",
+  "description": "Tatlı zevkine göre hangi mutfağa aitsin? Hemen öğren!",
+  "questions": [
+    {
+      "question": "En sevdiğin sütlü tatlı hangisi?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426393/13642d6c-8972-438c-a38b-f2daaf66f750_dctt5b.avif",
+      "options": [
+        { "text": "Kazandibi", "value": "turk" },
+        { "text": "Panna Cotta", "value": "italian" },
+        { "text": "Crème Brûlée", "value": "french" },
+        { "text": "Banana Pudding", "value": "american" }
+      ]
+    },
+    {
+      "question": "Hangisi tam sana göre bir kek?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426393/vegan-red-velvet-cake-1_wajr8a.jpg",
+      "options": [
+        { "text": "Revani", "value": "turk" },
+        { "text": "Tiramisu", "value": "italian" },
+        { "text": "Moelleux au chocolat(Sufle)", "value": "french" },
+        { "text": "Red Velvet Cake", "value": "american" }
+      ]
+    },
+    {
+      "question": "Bir kahve yanında ne yersin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426392/turk-lokumu_gfy6ss.jpg",
+      "options": [
+        { "text": "Lokum", "value": "turk" },
+        { "text": "Biscotti", "value": "italian" },
+        { "text": "Macaron", "value": "french" },
+        { "text": "Donut", "value": "american" }
+      ]
+    },
+    {
+      "question": "En çok hangisi iştahını kabartıyor?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426393/188-ozel-karisik-baklava-2-karisik3-1000x1000_jpltnc.png",
+      "options": [
+        { "text": "Baklava", "value": "turk" },
+        { "text": "Cannoli", "value": "italian" },
+        { "text": "Éclair", "value": "french" },
+        { "text": "Cheesecake", "value": "american" }
+      ]
+    },
+    {
+      "question": "Tatlı krizinde ilk aklına gelen?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426393/chocolate-brownies-recipe-735x735_gkbgyi.webp",
+      "options": [
+        { "text": "Sütlaç", "value": "turk" },
+        { "text": "Gelato", "value": "italian" },
+        { "text": "Madeleine", "value": "french" },
+        { "text": "Brownie", "value": "american" }
+      ]
+    },
+    {
+      "question": "Bir yaz tatlısı seç!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426394/Affogato2212_hqgddf.jpg",
+      "options": [
+        { "text": "Güllaç", "value": "turk" },
+        { "text": "Affogato", "value": "italian" },
+        { "text": "Clafoutis", "value": "french" },
+        { "text": "Ice Cream Sandwich", "value": "american" }
+      ]
+    },
+    {
+      "question": "Kış akşamlarında hangi tatlı seni mutlu eder?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748426394/new-apple-pie-13-of-19_onltbq.jpg",
+      "options": [
+        { "text": "Ayva Tatlısı", "value": "turk" },
+        { "text": "Panettone", "value": "italian" },
+        { "text": "Tarte Tatin", "value": "french" },
+        { "text": "Apple Pie", "value": "american" }
+      ]
+    },
+    {
+      "question": "Tatlıların sunumu senin için ne kadar önemli?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748427132/Pastry-chef-placing-raspberries-on-a-desserts-768x512-1_vx6z8g.jpg",
+      "options": [
+        { "text": "Lezzet önemli, sunum o kadar değil", "value": "turk" },
+        { "text": "Hafif ve estetik sunumlar severim", "value": "italian" },
+        { "text": "Sunum her şeydir!", "value": "french" },
+        { "text": "Büyük ve bol kremalı olsun yeter", "value": "american" }
+      ]
+    }
+  ],
+  "results": {
+    "turk": {
+      "title": "Sen tam bir Türk tatlı ruhusun!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748428157/ChatGPT_Image_28_May_2025_13_28_14_fj94gv.png",
+      "description": "Tatlıya karşı güçlü bir sevgin var. Geleneksel tatlardan vazgeçemiyorsun ve seni en çok cezbeden şey yoğun lezzetler. Mis gibi şerbetli tatlılar tam sana göre!"
+    },
+    "italian": {
+      "title": "Sen içten içe İtalyan’sın!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748428486/ChatGPT_Image_28_May_2025_13_34_27_wxazcd.png",
+      "description": "Senin tatlı anlayışın hafiflik ve şıklık. Tiramisu, panna cotta ve espresso aromalarıyla bütünleşen rafine bir damak zevkin var."
+    },
+    "french": {
+      "title": "Senin ruhun Fransız mutfağında dolaşıyor!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748428729/ChatGPT_Image_28_May_2025_13_38_15_nbu9hh.png",
+      "description": "Zarafet, sunum ve incelik… Tatlı senin için adeta bir sanat. Macaron’dan tarte tatin’e kadar estetik senin için ön planda."
+    },
+    "american": {
+      "title": "Amerikan tarzı senin işin!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748428251/ChatGPT_Image_28_May_2025_13_30_18_osluv2.png",
+      "description": "Kalori mi? Önemli değil! Bol kremalı, büyük dilimli ve yoğun tatlar senin ruhunu doyuruyor. Cheesecake, brownie ve donut senin için yaratılmış."
+    }
+  }
+}

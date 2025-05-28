@@ -2,6 +2,10 @@ import React from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import kokteylTest from "../data/tests/test_kokteyl.json";
 import yemekTest from "../data/tests/test_yemek_karakteri.json";
+import saglikliTest from "../data/tests/test_saglikli_beslenme.json";
+import tatliMilletTest from "../data/tests/test_tatli_millet.json";
+
+
 import "./TestResultPage.css";
 
 const TestResultPage = () => {
@@ -15,6 +19,10 @@ const TestResultPage = () => {
   let test;
   if (testId === "kokteyl") test = kokteylTest;
   else if (testId === "yemek_karakteri") test = yemekTest;
+  else if (testId === "saglikli_beslenme") test = saglikliTest;
+  else if (testId === "tatli_millet") test = tatliMilletTest;
+
+
   else return <p>Test verisi alınamadı</p>;
 
   const data = test.results?.[result];

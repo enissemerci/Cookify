@@ -1,0 +1,96 @@
+{
+  "id": "saglikli_beslenme",
+  "title": "Ne Kadar Sağlıklı Besleniyorsun?",
+  "description": "Yeme alışkanlıklarına göre sağlıklı beslenme düzeyini keşfet!",
+  "questions": [
+    {
+      "question": "Şimdi dürüst ol bakalım; sebzeleri kendi isteğinle mi yiyorsun yoksa sadece sağlıklı diye mi?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748414257/shutterstock_795233002-scaled_g9grum.jpg",
+      "options": [
+        { "text": "Sebzeleri çok severim, kendi isteğimle yerim.", "value": "C" },
+        { "text": "Sadece sağlıklı olduğu için yerim.", "value": "B" },
+        { "text": "Hiç sevmem, mümkünse yemem.", "value": "A" }
+      ]
+    },
+    {
+      "question": "Diyelim ki çok aç bir şekilde eve geldin ve evde hiç yemek yok. Yemek için ne yaparsın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748414549/istockphoto-1460535444-612x612_en4jqz.jpg",
+      "options": [
+        { "text": "Dışarıdan fast food sipariş ederim.", "value": "A" },
+        { "text": "Evdeki malzemelerle sağlıklı bir şeyler hazırlarım.", "value": "C" },
+        { "text": "Atıştırmalıklarla geçiştiririm.", "value": "B" }
+      ]
+    },
+    {
+      "question": "Peki ekmek seçimin bunlardan hangisi olur?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748414637/types-of-bread-1024x683_bpnbga.jpg",
+      "options": [
+        { "text": "Tam buğday ekmeği", "value": "C" },
+        { "text": "Beyaz ekmek", "value": "A" },
+        { "text": "Çavdar ekmeği", "value": "C" }
+      ]
+    },
+    {
+      "question": "Sence gün içinde yeteri kadar su içiyor musun?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748414726/hydration-water-winter_sivecb.jpg",
+      "options": [
+        { "text": "Evet, günde en az 2 litre su içerim.", "value": "C" },
+        { "text": "Bazen unutuyorum ama içmeye çalışıyorum.", "value": "B" },
+        { "text": "Hayır, su içmeyi pek sevmem.", "value": "A" }
+      ]
+    },
+    {
+      "question": "Abur cuburlarla aran nasıldır?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748414796/iStock-458463905_bruvzp.jpg",
+      "options": [
+        { "text": "Çok severim, sık sık tüketirim.", "value": "A" },
+        { "text": "Ara sıra canım çeker, tüketirim.", "value": "B" },
+        { "text": "Pek aramam, sağlıklı atıştırmalıkları tercih ederim.", "value": "C" }
+      ]
+    },
+    {
+      "question": "Salatalarda zeytinyağını kullanır mısın?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748414900/istockphoto-1137050142-612x612_hxswbc.jpg",
+      "options": [
+        { "text": "Evet, her zaman kullanırım.", "value": "C" },
+        { "text": "Bazen kullanırım.", "value": "B" },
+        { "text": "Hayır, kullanmam.", "value": "A" }
+      ]
+    },
+    {
+      "question": "Akşam yemeğinden sonra hangisini tercih edersin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748415058/8fd43862-3ab8-4fb8-811b-719fc835441c_1920x1080_eazbbp.jpg",
+      "options": [
+        { "text": "Tatlı bir şeyler yerim.", "value": "A" },
+        { "text": "Meyve tüketirim.", "value": "C" },
+        { "text": "Hiçbir şey yemem.", "value": "B" }
+      ]
+    },
+    {
+      "question": "Son olarak, genelde dışarıdan yemek söyler misin?",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748415235/Never-Order-This-As-Takeout-FT-BLOG0723-02008940e5dc4022bbb186e0d1250de6_hdjs7m.jpg",
+      "options": [
+        { "text": "Evet, sık sık söylerim.", "value": "A" },
+        { "text": "Ara sıra söylerim.", "value": "B" },
+        { "text": "Hayır, genellikle evde yemek yaparım.", "value": "C" }
+      ]
+    }
+  ],
+  "results": {
+    "A": {
+      "title": "Acilen beslenme rutinini değiştirmen lazım…",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748420324/junk-food_j0lvkp.jpg",
+      "description": "Söz konusu senin beslenme biçimin olunca nereden başlasak bilemedik... Nedendir bilinmez ama beslenme konusunda elin hep sağlıksız olana gidiyor, vücuduna çok iyi bakmıyorsun. Ama kesinlikle seni yargılamıyoruz, bunu bilmeni isteriz. Senin için istediğimiz tek şey, daha iyi hissetmek için sağlıklı bir beslenme rutini oluşturman. Emin ol bunu yaptıktan sonra bize teşekkür edeceksin!"
+    },
+    "B": {
+      "title": "Bir iyiye bir kötüye giden bir beslenme alışkanlığın var…",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748420242/dieting-healthy-lifestyle-weight-loss-concept-woman-cartoon-character-standing-choosing-between-healthy-and-unhealthy-food-fastfood-vs-balanced-menu-illustration-vector_fl7svf.jpg",
+      "description": "Senin ne tam olarak sağlıklı beslendiğini, ne de aksini söyleyemiyoruz. Çünkü sen 'Can boğazdan gelir' diyerek o an canın ne isterse onu yiyorsun. Elinden geldiğince sağlıklı olmaya çalışıyor, bunun için ekstra çaba sarf etmiyorsun. Biraz daha dikkat edersen çok daha iyi olur!"
+    },
+    "C": {
+      "title": "O kadar sağlıklı besleniyorsun ki, maşallahın var!",
+      "image": "https://res.cloudinary.com/dtwnowxud/image/upload/v1748420242/heart-health-concept-with-related-foods-in-white-heart-shaped-bowl-potato-red-peppers-broccoli-radish-red-onion-garlic-dry_spicic.webp",
+      "description": "Sen sağlıklı beslenen ve kendine iyi bakan birisin. Bu artık senin yaşam biçimin olmuş. Canın sağlıksız hiçbir şeyi istemiyor bile! İnsanların senden öğreneceği çok şey var."
+    }
+  }
+}

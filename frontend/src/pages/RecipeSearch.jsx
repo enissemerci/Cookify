@@ -42,7 +42,8 @@ const RecipeSearch = () => {
   };
 
   return (
-    <Box sx={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
+    <Box sx={{ position: "relative", minHeight: "100vh", overflowX: "hidden", overflowY: "auto" }}>
+
       {/* Arka plan desen katmanı */}
       <Box
         sx={{
